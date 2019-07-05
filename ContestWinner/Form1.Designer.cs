@@ -1,4 +1,4 @@
-﻿namespace RacingData
+﻿namespace ContestWinner
 {
     partial class Form1
     {

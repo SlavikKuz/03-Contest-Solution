@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace RacingData.Properties
+namespace ContestWinner.Properties
 {
 
 
