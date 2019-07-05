@@ -1,9 +1,17 @@
 #### Hi! This is a Contest Winner solution (.Net, WinForms, SQL) 
 
-#### 1.0. Solution requirements.
+1.0. [Solution requirements.](#01)
+	1.1. General specifics.
+	1.2. Detailed specifics.
+	1.3. Solution Concepts.
+2.0. [Data Design.](#02)
+3.0. [  ](#03)
+4.0. [  ](#04)
+5.0. [  ](#05)
+
+#### <a href='#01' id='01' class='anchor' aria-hidden='true'>1.0. Solution requirements.</a>
 
 1.1. General specifics:
-
 - tracks who wins in series of games;
 - multiple teams take part in the contest;
 - creates a contest plan;
@@ -12,7 +20,6 @@
 - the last standing wins.
 
 1.2. Detailed specifics:
-
 - variable number of players in a contest;
 - in case of non-usual number of players (like %4 != 0), some random players skip the first round as winners to join players in the second act;
 - ordering of teams in games is random;
@@ -29,7 +36,6 @@
 - emailing players/teams about planned games.
 
 1.3. Solution Concepts:
-
 - Windows Forms and Class Library;
 - SQL/TXT file;
 - one user at a time on one application;
@@ -39,7 +45,7 @@
 - interfaces;
 - randomizing.
 
-#### 2.0. Data Design.
+#### <a href='#02' id='02' class='anchor' aria-hidden='true'>2.0. Data Design.</a>
 
 2.1. Classes:
 
@@ -78,3 +84,7 @@
 
 #### 3.0. 1:15
 
+#### <a href='#03' id='03' class='anchor' aria-hidden='true'>3.0. </a>
+#### <a href='#04' id='04' class='anchor' aria-hidden='true'>4.0. </a>
+#### <a href='#05' id='05' class='anchor' aria-hidden='true'>5.0. </a>
+#### <a href='#06' id='06' class='anchor' aria-hidden='true'>6.0. </a>
