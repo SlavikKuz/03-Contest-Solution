@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TrackerLibrary
 {
-    public class PrizaModel
+    public class PrizeModel
     {
         public int PlaceNumber { get; set; }
         public string PlaceName { get; set; }
