@@ -1,13 +1,14 @@
 #### Hi! This is a Contest Winner solution (.Net, WinForms, SQL) 
 
-1.0. [Solution requirements.](#01)
-	1.1. General specifics.
-	1.2. Detailed specifics.
-	1.3. Solution Concepts.
-2.0. [Data Design.](#02)
-3.0. [  ](#03)
-4.0. [  ](#04)
-5.0. [  ](#05)
+1.0. [Solution requirements.](#01)<br/>
+	1.1. General specifics.<br/>
+	1.2. Detailed specifics.<br/>
+	1.3. Solution Concepts.<br/>
+2.0. [Data Design.](#02)<br/>
+	2.1. Classes.<br/>
+3.0. [  ](#03)<br/>
+4.0. [  ](#04)<br/>
+5.0. [  ](#05)<br/>
 
 #### <a href='#01' id='01' class='anchor' aria-hidden='true'>1.0. Solution requirements.</a>
 
@@ -82,7 +83,11 @@
   - Score (double);
   - ParentMatchup (Matchup);
 
-#### 3.0. 1:15
+#### 3.0. 1:50
+
+
+
+
 
 #### <a href='#03' id='03' class='anchor' aria-hidden='true'>3.0. </a>
 #### <a href='#04' id='04' class='anchor' aria-hidden='true'>4.0. </a>
