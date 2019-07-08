@@ -1,17 +1,17 @@
 #### Hi! This is a Contest Winner solution (.Net, WinForms, SQL) 
 
-1.0. [Solution requirements.](#01)<br/>
+1.0. [Solution requirements](#01)<br/>
 	1.1. General specifics.<br/>
 	1.2. Detailed specifics.<br/>
 	1.3. Solution Concepts.<br/>
-2.0. [Data Design.](#02)<br/>
+2.0. [Data Design](#02)<br/>
 	2.1. Classes.<br/>
 3.0. [Database diagram
-.](#03)<br/>
+](#03)<br/>
 4.0. [  ](#04)<br/>
 5.0. [  ](#05)<br/>
 
-#### <a href='#01' id='01' class='anchor' aria-hidden='true'>1.0. Solution requirements.</a>
+#### <a href='#01' id='01' class='anchor' aria-hidden='true'>1.0. Solution requirements</a>
 
 1.1. General specifics:
 - tracks who wins in series of games;
@@ -47,7 +47,7 @@
 - interfaces;
 - randomizing.
 
-#### <a href='#02' id='02' class='anchor' aria-hidden='true'>2.0. Data Design.</a>
+#### <a href='#02' id='02' class='anchor' aria-hidden='true'>2.0. Data Design</a>
 
 2.1. Classes:
 
@@ -87,13 +87,13 @@
 #### <a href='#03' id='03' class='anchor' aria-hidden='true'>3.0. Database diagram
 </a>
 
-[DB diagram](/Readme/DBDiagram.PNG?raw=true "DB diagram") 
+<img src="/Readme/DBDiagram.PNG?raw=true" width="480"/>
+
+#### <a href='#04' id='03' class='anchor' aria-hidden='true'>4.0. </a>
 
 
 
 
-
-#### <a href='#03' id='03' class='anchor' aria-hidden='true'>3.0. </a>
 #### <a href='#04' id='04' class='anchor' aria-hidden='true'>4.0. </a>
 #### <a href='#05' id='05' class='anchor' aria-hidden='true'>5.0. </a>
 #### <a href='#06' id='06' class='anchor' aria-hidden='true'>6.0. </a>
