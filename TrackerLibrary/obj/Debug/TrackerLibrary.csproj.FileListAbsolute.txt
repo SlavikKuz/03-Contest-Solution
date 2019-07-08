@@ -1,2 +1,6 @@
 C:\Users\slavi\source\repos\RacingData\TrackerLibrary\obj\Debug\TrackerLibrary.csprojAssemblyReference.cache
 C:\Users\slavi\source\repos\RacingData\TrackerLibrary\obj\Debug\TrackerLibrary.csproj.CoreCompileInputs.cache
+c:\Users\slavi\source\repos\RacingData\TrackerLibrary\bin\Debug\TrackerLibrary.dll
+c:\Users\slavi\source\repos\RacingData\TrackerLibrary\bin\Debug\TrackerLibrary.pdb
+c:\Users\slavi\source\repos\RacingData\TrackerLibrary\obj\Debug\TrackerLibrary.dll
+c:\Users\slavi\source\repos\RacingData\TrackerLibrary\obj\Debug\TrackerLibrary.pdb

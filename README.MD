@@ -87,10 +87,19 @@
 #### <a href='#03' id='03' class='anchor' aria-hidden='true'>3.0. Database diagram
 </a>
 
-<img src="/Readme/DBDiagram.PNG?raw=true" width="480"/>
+<img src="/Readme/DBDiagram.PNG?raw=true" width="640"/>
 
-#### <a href='#04' id='03' class='anchor' aria-hidden='true'>4.0. </a>
+#### <a href='#04' id='03' class='anchor' aria-hidden='true'>4.0. Planning solution</a>
 
+4.1. Prize form
+//we create the prize for the contest,
+//program checks the form, all the fields, an then
+//saves data to both database and txt file.
+
+- interface IDataConnection, interface for data sources;
+- class GlobalConfig, public static class for data source info;
+- class SqlConnector : IDataConnection, saves data to DB;
+- class TextConnection : IDataConnection, saves data to txt;
 
 
 

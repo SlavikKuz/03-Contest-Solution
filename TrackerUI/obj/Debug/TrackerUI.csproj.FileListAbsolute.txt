@@ -8,3 +8,10 @@ C:\Users\slavi\source\repos\RacingData\TrackerUI\obj\Debug\TrackerUI.csproj.Gene
 C:\Users\slavi\source\repos\RacingData\TrackerUI\obj\Debug\TrackerUI.csproj.CoreCompileInputs.cache
 C:\Users\slavi\source\repos\RacingData\TrackerUI\obj\Debug\TrackerUI.exe
 C:\Users\slavi\source\repos\RacingData\TrackerUI\obj\Debug\TrackerUI.pdb
+c:\Users\slavi\source\repos\RacingData\TrackerUI\bin\Debug\TrackerLibrary.dll
+c:\Users\slavi\source\repos\RacingData\TrackerUI\bin\Debug\TrackerLibrary.pdb
+c:\Users\slavi\source\repos\RacingData\TrackerUI\obj\Debug\TrackerUI.createPrizeForm.resources
+c:\Users\slavi\source\repos\RacingData\TrackerUI\obj\Debug\TrackerUI.CreateTeamForm.resources
+c:\Users\slavi\source\repos\RacingData\TrackerUI\obj\Debug\TrackerUI.CreateTournamentForm.resources
+c:\Users\slavi\source\repos\RacingData\TrackerUI\obj\Debug\TrackerUI.tournamentDashbordForm.resources
+c:\Users\slavi\source\repos\RacingData\TrackerUI\obj\Debug\TrackerUI.csproj.CopyComplete

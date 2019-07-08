@@ -103,9 +103,9 @@
             this.prizeAmountLabel.ForeColor = System.Drawing.Color.DodgerBlue;
             this.prizeAmountLabel.Location = new System.Drawing.Point(28, 233);
             this.prizeAmountLabel.Name = "prizeAmountLabel";
-            this.prizeAmountLabel.Size = new System.Drawing.Size(277, 54);
+            this.prizeAmountLabel.Size = new System.Drawing.Size(271, 54);
             this.prizeAmountLabel.TabIndex = 17;
-            this.prizeAmountLabel.Text = "Place Amount:";
+            this.prizeAmountLabel.Text = "Prize Amount:";
             // 
             // prizePercentageValue
             // 
@@ -121,9 +121,9 @@
             this.prizePercantageLabel.ForeColor = System.Drawing.Color.DodgerBlue;
             this.prizePercantageLabel.Location = new System.Drawing.Point(28, 378);
             this.prizePercantageLabel.Name = "prizePercantageLabel";
-            this.prizePercantageLabel.Size = new System.Drawing.Size(330, 54);
+            this.prizePercantageLabel.Size = new System.Drawing.Size(325, 54);
             this.prizePercantageLabel.TabIndex = 19;
-            this.prizePercantageLabel.Text = "Place Percantage:";
+            this.prizePercantageLabel.Text = "Prize Percentage:";
             // 
             // orLabel
             // 
@@ -151,6 +151,7 @@
             this.createPrizeButton.TabIndex = 26;
             this.createPrizeButton.Text = "Create Prize";
             this.createPrizeButton.UseVisualStyleBackColor = false;
+            this.createPrizeButton.Click += new System.EventHandler(this.createPrizeButton_Click);
             // 
             // createPrizeForm
             // 
