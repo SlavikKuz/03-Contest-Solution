@@ -6,7 +6,8 @@
 	1.3. Solution Concepts.<br/>
 2.0. [Data Design.](#02)<br/>
 	2.1. Classes.<br/>
-3.0. [  ](#03)<br/>
+3.0. [Database diagram
+.](#03)<br/>
 4.0. [  ](#04)<br/>
 5.0. [  ](#05)<br/>
 
@@ -83,7 +84,10 @@
   - Score (double);
   - ParentMatchup (Matchup);
 
-#### 3.0. 1:50
+#### <a href='#03' id='03' class='anchor' aria-hidden='true'>3.0. Database diagram
+</a>
+
+[DB diagram](/Readme/DBDiagram.PNG?raw=true "DB diagram") 
 
 
 
