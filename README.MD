@@ -92,25 +92,25 @@
 #### <a href='#04' id='03' class='anchor' aria-hidden='true'>4.0. Planning solution</a>
 
 4.1. Data Connection
-We create *IDataConnection interface* which contains an abstract method that accept and return *PrizeModel* class. 
+We create ~~IDataConnection interface~~ which contains an abstract method that accept and return ~~PrizeModel class~~. 
 The interface will be implemented in two classes that write data to DB or .txt file.
 
-*Class GlobalConfig* is a public static class for storing data sources info. It has the *IDataConnection* list for data connections. Static method *InitializeConnections* creates connections to SQL DB and .txt file. A succesfull connection to sources (SQL or .txt) is added to the list.
+~~Class GlobalConfig~~ is a public static class for storing data sources info. It has the ~~IDataConnection~~ list for data connections. Static method ~~InitializeConnections~~ creates connections to SQL DB and .txt file. A succesfull connection to sources (SQL or .txt) is added to the list.
 
-*Class SqlConnector : IDataConnection* saves data to DB.
+~~Class SqlConnector : IDataConnection~~ saves data to DB.
 
-*Class TextConnection : IDataConnection* saves data to .txt.
+~~Class TextConnection : IDataConnection~~ saves data to .txt.
 
 4.2. Prize form
 We create a reward for winning places in the contest. The program checks the correct input in every fields, and then saves data to both database and txt file.
 
 <bilde>
 
-This form contains fields *Place Number*, *Place Name*, *Prize Amount*, *Prize Percentage" and *Create Prize* button.
+This form contains fields ~~Place Number~~, ~~Place Name~~, ~~Prize Amount~~, ~~Prize Percentage~~ and ~~Create Prize~~ button.
 
-*PrizeModel class* contains user's constructor that uses these field to initiate properties of the instance of the class. The constructor parses string values in the fileds, that will be saved later.
+~~PrizeModel class~~ contains user's constructor that uses these field to initiate properties of the instance of the class. The constructor parses string values in the fileds, that will be saved later.
 
-*CreatePrizeForm* form has a private method *ValidateForm()* that checks the correct input, and shows message "Please, check the form!" otherwise. Method *createPrizeButton_Click*, if the validation is succesfull, invokes user's constructor of *PrizeModel class* and creates an instance of a class. Then the instance is passed to every *IDataConnection* stored in the *List<IDataConnection>* in *GlobalConfig.Connections*. After successfull adding data, the method resets fields values.
+~~CreatePrizeForm~~ form has a private method ~~ValidateForm()~~ that checks the correct input, and shows message *"Please, check the form!"* otherwise. Method ~~createPrizeButton_Click~~, if the validation is succesfull, invokes user's constructor of ~~PrizeModel class~~ and creates an instance of a class. Then the instance is passed to every ~~IDataConnection~~ stored in the ~~List<IDataConnection>~~ in ~~GlobalConfig.Connections~~. After successfull adding data, the method resets fields values.
 
 
 #### <a href='#04' id='04' class='anchor' aria-hidden='true'>4.0. </a>
