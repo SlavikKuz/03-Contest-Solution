@@ -1,4 +1,4 @@
-#### Hi! This is a Contest Winner solution (.Net, WinForms, SQL) 
+#### Hi! This is a Contest Winner solution (.Net, WinForms, MSSQL, Dapper) 
 
 1.0. [Solution requirements](#01)<br/>
 	1.1. General specifics.<br/>
@@ -92,16 +92,19 @@
 ### <a href='#04' id='03' class='anchor' aria-hidden='true'>4.0. Planning solution</a>
 
 4.1. Data Connection<br/>
+
 We create `IDataConnection interface` which contains an abstract method that accept and return `PrizeModel class`. 
 The interface will be implemented in two classes that write data to DB or .txt file.
 
-`Class GlobalConfig` is a public static class for storing data sources info. It has the `IDataConnection` list for data connections. Static method `InitializeConnections` creates connections to SQL DB and .txt file. A succesfull connection to sources (SQL or .txt) is added to the list.
+`Class GlobalConfig` is a public static class for storing data sources info. It has the `IDataConnection` static property for data connection. Static method `InitializeConnections` creates connections to SQL DB or .txt file, depends on the privious choice. `CnnString` method goes to `App.config` and get previously added `connectionStrings`. Choice options are from `Enum.cs` which will store all the enums for the current solution. 
 
-`Class SqlConnector : IDataConnection` saves data to DB.
+`Class SqlConnector : IDataConnection` saves data to DB.'
+It establishes connection. Then using `Dapper lib`executes the store procedure in the DB with the set of parameters. Query returns output value for @id.
 
-`Class TextConnection : IDataConnection` saves data to .txt.
+`Class TextConnector : IDataConnection` saves data to .txt.
 
 4.2. Prize form<br/>
+
 We create a reward for winning places in the contest. The program checks the correct input in every fields, and then saves data to both database and txt file.
 
 <br/>bilde prize form<br/>
@@ -110,7 +113,7 @@ This form contains fields `Place Number`, `Place Name`, `Prize Amount`, `Prize P
 
 `PrizeModel class` contains user's constructor that uses these field to initiate properties of the instance of the class. The constructor parses string values in the fileds, that will be saved later.
 
-`CreatePrizeForm` form has a private method `ValidateForm()` that checks the correct input, and shows message *Please, check the form!* otherwise. Method `createPrizeButton_Click`, if the validation is succesfull, invokes user's constructor of `PrizeModel class` and creates an instance of a class. Then the instance is passed to every `IDataConnection` stored in the `List<IDataConnection>` in `GlobalConfig.Connections`. After successfull adding data, the method resets fields values.
+`CreatePrizeForm` form has a private method `ValidateForm()` that checks the correct input, and shows message *Please, check the form!* otherwise. Method `createPrizeButton_Click`, if the validation is succesfull, invokes user's constructor of `PrizeModel class` and creates an instance of a class. Then the instance is stored in according to `DatabaseType` from `GlobalConfig.Connections`. After successfull adding data, the method resets fields values.
 
 
 ### <a href='#04' id='04' class='anchor' aria-hidden='true'>4.0. </a>

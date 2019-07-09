@@ -15,3 +15,5 @@ c:\Users\slavi\source\repos\RacingData\TrackerUI\obj\Debug\TrackerUI.CreateTeamF
 c:\Users\slavi\source\repos\RacingData\TrackerUI\obj\Debug\TrackerUI.CreateTournamentForm.resources
 c:\Users\slavi\source\repos\RacingData\TrackerUI\obj\Debug\TrackerUI.tournamentDashbordForm.resources
 c:\Users\slavi\source\repos\RacingData\TrackerUI\obj\Debug\TrackerUI.csproj.CopyComplete
+c:\Users\slavi\source\repos\RacingData\TrackerUI\bin\Debug\Dapper.dll
+c:\Users\slavi\source\repos\RacingData\TrackerUI\bin\Debug\Dapper.xml

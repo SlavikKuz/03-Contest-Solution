@@ -4,3 +4,6 @@ c:\Users\slavi\source\repos\RacingData\TrackerLibrary\bin\Debug\TrackerLibrary.d
 c:\Users\slavi\source\repos\RacingData\TrackerLibrary\bin\Debug\TrackerLibrary.pdb
 c:\Users\slavi\source\repos\RacingData\TrackerLibrary\obj\Debug\TrackerLibrary.dll
 c:\Users\slavi\source\repos\RacingData\TrackerLibrary\obj\Debug\TrackerLibrary.pdb
+c:\Users\slavi\source\repos\RacingData\TrackerLibrary\bin\Debug\Dapper.dll
+c:\Users\slavi\source\repos\RacingData\TrackerLibrary\bin\Debug\Dapper.xml
+c:\Users\slavi\source\repos\RacingData\TrackerLibrary\obj\Debug\TrackerLibrary.csproj.CopyComplete
