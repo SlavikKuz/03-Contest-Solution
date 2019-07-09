@@ -11,7 +11,7 @@
 4.0. [  ](#04)<br/>
 5.0. [  ](#05)<br/>
 
-#### <a href='#01' id='01' class='anchor' aria-hidden='true'>1.0. Solution requirements</a>
+### <a href='#01' id='01' class='anchor' aria-hidden='true'>1.0. Solution requirements</a>
 
 1.1. General specifics:
 - tracks who wins in series of games;
@@ -47,7 +47,7 @@
 - interfaces;
 - randomizing.
 
-#### <a href='#02' id='02' class='anchor' aria-hidden='true'>2.0. Data Design</a>
+### <a href='#02' id='02' class='anchor' aria-hidden='true'>2.0. Data Design</a>
 
 2.1. Classes:
 
@@ -84,35 +84,35 @@
   - Score (double);
   - ParentMatchup (Matchup);
 
-#### <a href='#03' id='03' class='anchor' aria-hidden='true'>3.0. Database diagram
+### <a href='#03' id='03' class='anchor' aria-hidden='true'>3.0. Database diagram
 </a>
 
 <img src="/Readme/DBDiagram.PNG?raw=true" width="640"/>
 
-#### <a href='#04' id='03' class='anchor' aria-hidden='true'>4.0. Planning solution</a>
+### <a href='#04' id='03' class='anchor' aria-hidden='true'>4.0. Planning solution</a>
 
-4.1. Data Connection
-We create `<IDataConnection interface>` which contains an abstract method that accept and return `<PrizeModel class>`. 
+4.1. Data Connection<br/>
+We create `IDataConnection interface` which contains an abstract method that accept and return `PrizeModel class`. 
 The interface will be implemented in two classes that write data to DB or .txt file.
 
-`<Class GlobalConfig>` is a public static class for storing data sources info. It has the `<IDataConnection>` list for data connections. Static method `<InitializeConnections>` creates connections to SQL DB and .txt file. A succesfull connection to sources (SQL or .txt) is added to the list.
+`Class GlobalConfig` is a public static class for storing data sources info. It has the `IDataConnection` list for data connections. Static method `InitializeConnections` creates connections to SQL DB and .txt file. A succesfull connection to sources (SQL or .txt) is added to the list.
 
-`<Class SqlConnector : IDataConnection>` saves data to DB.
+`Class SqlConnector : IDataConnection` saves data to DB.
 
-`<Class TextConnection : IDataConnection>` saves data to .txt.
+`Class TextConnection : IDataConnection` saves data to .txt.
 
-4.2. Prize form
+4.2. Prize form<br/>
 We create a reward for winning places in the contest. The program checks the correct input in every fields, and then saves data to both database and txt file.
 
-<bilde>
+<br/>bilde prize form<br/>
 
-This form contains fields `<Place Number>`, `<Place Name>`, `<Prize Amount>`, `<Prize Percentage>` and `<Create Prize>` button.
+This form contains fields `Place Number`, `Place Name`, `Prize Amount`, `Prize Percentage` and `Create Prize` button.
 
-`<PrizeModel class>` contains user's constructor that uses these field to initiate properties of the instance of the class. The constructor parses string values in the fileds, that will be saved later.
+`PrizeModel class` contains user's constructor that uses these field to initiate properties of the instance of the class. The constructor parses string values in the fileds, that will be saved later.
 
-`<CreatePrizeForm>` form has a private method `<ValidateForm()>` that checks the correct input, and shows message *"Please, check the form!"* otherwise. Method `<createPrizeButton_Click>`, if the validation is succesfull, invokes user's constructor of `<PrizeModel class>` and creates an instance of a class. Then the instance is passed to every `<IDataConnection>` stored in the `<List<IDataConnection>>` in `<GlobalConfig.Connections>`. After successfull adding data, the method resets fields values.
+`CreatePrizeForm` form has a private method `ValidateForm()` that checks the correct input, and shows message *Please, check the form!* otherwise. Method `createPrizeButton_Click`, if the validation is succesfull, invokes user's constructor of `PrizeModel class` and creates an instance of a class. Then the instance is passed to every `IDataConnection` stored in the `List<IDataConnection>` in `GlobalConfig.Connections`. After successfull adding data, the method resets fields values.
 
 
-#### <a href='#04' id='04' class='anchor' aria-hidden='true'>4.0. </a>
-#### <a href='#05' id='05' class='anchor' aria-hidden='true'>5.0. </a>
-#### <a href='#06' id='06' class='anchor' aria-hidden='true'>6.0. </a>
+### <a href='#04' id='04' class='anchor' aria-hidden='true'>4.0. </a>
+### <a href='#05' id='05' class='anchor' aria-hidden='true'>5.0. </a>
+### <a href='#06' id='06' class='anchor' aria-hidden='true'>6.0. </a>
