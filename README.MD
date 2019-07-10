@@ -10,7 +10,7 @@
 	2.1. Classes.<br/>
 3.0. [Database diagram
 ](#03)<br/>
-4.0. [  ](#04)<br/>
+4.0. [Planning solution](#04)<br/>
 5.0. [  ](#05)<br/>
 
 ### <a href='#01' id='01' class='anchor' aria-hidden='true'>1.0. Solution requirements</a>
@@ -103,7 +103,7 @@ The interface will be implemented in two classes that write data to DB or .txt f
 `Class SqlConnector : IDataConnection` saves data to DB.
 It establishes connection. Then using `Dapper lib`executes the store procedure in the DB with the set of parameters. Query returns output value for `@id`.
 
-`Class TextConnector : IDataConnection` saves data to .csv file. File path is stored in the `App.config`. The class contains `const PrizesFile` that stores file name `*PrizeModels.csv*`. Method `CreatePrize` loads the file, reads lines into the least, and convert strings to `PrizeModel` instances. The method also receives last `id` from the file, and adds +1 to create id for the new record *(SQL has autoincrement option)*. Is the file is empty, `id = 1`. Then the method creates a new instance with the id, makes a string of the instance `PrizeModel`, and writes the string down to the end of the file. The method returns curren `model` instance that can be used by other models.
+`Class TextConnector : IDataConnection` saves data to .csv file. File path is stored in the `App.config`. The class contains `const PrizesFile` that stores file name *`PrizeModels.csv`*. Method `CreatePrize` loads the file, reads lines into the least, and convert strings to `PrizeModel` instances. The method also receives last `id` from the file, and adds +1 to create id for the new record *(SQL has autoincrement option)*. Is the file is empty, `id = 1`. Then the method creates a new instance with the id, makes a string of the instance `PrizeModel`, and writes the string down to the end of the file. The method returns curren `model` instance that can be used by other models.
 
 Methods that `TextConnector` uses are implemented in `class TestConnectorProsessor`. The class has own `TextHelpers` namespace. Method `FullFilePath` returns full path to the file. Extention method `LoadFile` checks if the file already exits and reads all the lines into list of strings. `ConvertToPrizeModels` extention method splits every string into array of strings, and array members are assigned to propeties of a new `PrizeModel` instance. The method returns the list of `PrizeModel` instances. Extention method `SaveToPrizeFile` receives list of instances `PrizeModel`, turn them in strings, and write down the whole list to the file. 
 
@@ -117,7 +117,21 @@ This form contains fields `Place Number`, `Place Name`, `Prize Amount`, `Prize P
 
 `PrizeModel class` contains user's constructor that uses these field to initiate properties of the instance of the class. The constructor parses string values in the fileds, that will be saved later.
 
-`CreatePrizeForm` form has a private method `ValidateForm()` that checks the correct input, and shows message `*Please, check the form!*`' otherwise. Method `createPrizeButton_Click`, if the validation is succesfull, invokes user's constructor of `PrizeModel class` and creates an instance of a class. Then the instance is stored in according to `DatabaseType` from `GlobalConfig.Connections`. After successfull adding data, the method resets fields values.
+`CreatePrizeForm` form has a private method `ValidateForm()` that checks the correct input, and shows message *`Please, check the form!`* otherwise. Method `createPrizeButton_Click`, if the validation is succesfull, invokes user's constructor of `PrizeModel class` and creates an instance of a class. Then the instance is stored in according to `DatabaseType` from `GlobalConfig.Connections`. After successfull adding data, the method resets fields values.
+
+4.3. Create form<br/>
+The form creates new team player, select existing member, make a team, add a new team, delete selected.
+
+<br/>bilde prize form<br/>
+
+Form contains fields 
+
+
+in Idataconnection add createPerson
+implement it im sql and txt
+
+
+
 
 
 ### <a href='#04' id='04' class='anchor' aria-hidden='true'>4.0. </a>

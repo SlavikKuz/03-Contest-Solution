@@ -13,7 +13,12 @@ namespace TrackerLibrary.DataAccess
 
         private const string PrizesFile = "PrizeModels.csv"; //pascale case because const
 
-        
+        public PersonModel CreatePerson(PersonModel model)
+        {
+            throw new NotImplementedException();
+        }
+
+
         /// <summary>
         /// saves a new prize to the txt
         /// </summary>
