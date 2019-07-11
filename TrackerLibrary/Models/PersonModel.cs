@@ -35,5 +35,14 @@ namespace TrackerLibrary.Models
         /// Person's cell number
         /// </summary>
         public string CellPhoneNumber { get; set; }
+
+        /// <summary>
+        /// to avoid name duplicates
+        /// </summary>
+        public string FullName
+        {
+            get { return $"{ FirstName } { LastName }"; }
+        }
+
     }
 }

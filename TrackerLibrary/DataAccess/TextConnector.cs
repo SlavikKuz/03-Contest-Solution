@@ -8,14 +8,29 @@ using TrackerLibrary.DataAccess.TextHelpers;
 
 namespace TrackerLibrary.DataAccess
 {
-    public class TextConnection : IDataConnection
+    public class TextConnector : IDataConnection
     {
 
         private const string PrizesFile = "PrizeModels.csv"; //pascale case because const
+        private const string PeopleFile = "PersonModels.csv";
 
         public PersonModel CreatePerson(PersonModel model)
         {
-            throw new NotImplementedException();
+            List<PersonModel> people = PeopleFile.FullFilePath().LoadFile().ConvertToPersonModels();
+
+            int currentId = 1;
+
+            if(people.Count >0)
+            {
+                currentId = people.OrderByDescending(x => x.Id).First().Id + 1;
+            }
+
+            model.Id = currentId;
+            people.Add(model);
+
+            people.SaveToPeopleFile(PeopleFile);
+
+            return model;
         }
 
 
@@ -49,6 +64,11 @@ namespace TrackerLibrary.DataAccess
             //fully formed model with id that can be used further
             return model;
 
+        }
+
+        public List<PersonModel> GetPerson_All()
+        {
+            return PeopleFile.FullFilePath().LoadFile().ConvertToPersonModels();
         }
     }
 }

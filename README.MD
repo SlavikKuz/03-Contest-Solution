@@ -95,13 +95,15 @@
 
 4.1. Data Connection<br/>
 
-We create `IDataConnection interface` which contains an abstract method that accept and return `PrizeModel class`. 
-The interface will be implemented in two classes that write data to DB or .txt file.
+We create `IDataConnection interface` which contains an abstract methods that are implemented in two classes that write data to DB or .txt file.
+- `PrizeModel CreatePrize()`;
+- `PersonModel CreatePerson()`;
 
 `Class GlobalConfig` is a public static class for storing data sources info. It has the `IDataConnection` static property for data connection. Static method `InitializeConnections` creates connections to SQL DB or .txt file, depends on the privious choice. `CnnString` method goes to `App.config` and get previously added `connectionStrings`. Choice options are from `Enum.cs` which will store all the enums for the current solution. 
 
 `Class SqlConnector : IDataConnection` saves data to DB.
-It establishes connection. Then using `Dapper lib`executes the store procedure in the DB with the set of parameters. Query returns output value for `@id`.
+It establishes connection. Then using `Dapper lib` executes the store procedure in the DB with the set of parameters. Query returns output value for `@id`.
+`public PersonModel CreatePerson(PersonModel model)` method establishes connection to DB and executes the store procedure, where parameters are taken from fields in form `CreatePerson`. Then returns the `Person model`.
 
 `Class TextConnector : IDataConnection` saves data to .csv file. File path is stored in the `App.config`. The class contains `const PrizesFile` that stores file name *`PrizeModels.csv`*. Method `CreatePrize` loads the file, reads lines into the least, and convert strings to `PrizeModel` instances. The method also receives last `id` from the file, and adds +1 to create id for the new record *(SQL has autoincrement option)*. Is the file is empty, `id = 1`. Then the method creates a new instance with the id, makes a string of the instance `PrizeModel`, and writes the string down to the end of the file. The method returns curren `model` instance that can be used by other models.
 
@@ -120,15 +122,28 @@ This form contains fields `Place Number`, `Place Name`, `Prize Amount`, `Prize P
 `CreatePrizeForm` form has a private method `ValidateForm()` that checks the correct input, and shows message *`Please, check the form!`* otherwise. Method `createPrizeButton_Click`, if the validation is succesfull, invokes user's constructor of `PrizeModel class` and creates an instance of a class. Then the instance is stored in according to `DatabaseType` from `GlobalConfig.Connections`. After successfull adding data, the method resets fields values.
 
 4.3. Create form<br/>
-The form creates new team player, select existing member, make a team, add a new team, delete selected.
+The form helps to create a new team player, select existing member, make a team, add a new team, and delete selected.
 
 <br/>bilde prize form<br/>
 
-Form contains fields 
+Form contains fields ...
+
+CreateTeamForm, on event createMemberButton_Click validates form. If the validation is sucessfull a new instance of PersonModel is created, and properties are instantiated with values from the CreateForm. 
+
+Then implements CreatePerson from GlobalConfig, adds model to the sql or txt, and return empty values to the form. In case of fail, notifies the user "Please check the input!". ValidateForm() makes sure that every field in the form has a string loger 0.
+
+change:
+Text connector - new PeopleFile
+ConverToPersonModels in textconnectorprocessor
+SaveToPeopleFile in textconnectorprocessor
+createteam form - availableTeamMembers, selectTeamMembers WireUpLists
+IDataConnection GetPerson_All
+TextConnection GetPerson_All, 
+SqlConnector db = "ContestSolution";
+addTeamMemberButton_Click
+removeSelectedMemberButton_Click
 
 
-in Idataconnection add createPerson
-implement it im sql and txt
 
 
 
