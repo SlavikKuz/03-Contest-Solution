@@ -119,14 +119,14 @@ Event handlers in form `CreatePrizeForm.cs`:
 
 #### `Create` click -> `ValidateForm()` -> `new PrizeModel(args)` -> `CreatePrize(model)` -> Clear form
 
-A private method `ValidateForm()` inspects the fullfilling of the form, and shows message *`Please, check the form!`* if any problem appears. If the validation is passed, a new `PrizeModel` instance is created. `PrizeModel class` contains a user's constructor parses string values from the form to the properties.
+A private method `ValidateForm()` inspects the fullfilling of the form, and shows message *`Please, check the form!`* if any problem appears. If the validation is passed, a new `PrizeModel` instance is created. `PrizeModel class` contains a user's constructor that parses string values from the form to the fields.
 
 A weak reference calls a static property `GlobalConfig.Connection` that returns `IDataConnection` interface containing an abstract method `CreatePrize(PrizeModel model)`. The `GlobalConfig.Connection` property can return instance of `SqlConnector` or `TextConnector` class that both implement `IDataConnection` interface. `CreatePrize(model)` method stores the instance to Database or .csv file according to `DatabaseType` from `GlobalConfig.Connections`. After that the form is cleared.
 
 4.3. Create form<br/>
 The form helps to create a new team player, select existing member, make a team, add a new team, and delete selected.
 
-<br/>bilde prize form<br/>
+<img src="/Readme/02_CreateTeam.png?raw=true" width="320"/>
 
 Form contains fields ...
 
@@ -139,11 +139,12 @@ Text connector - new PeopleFile
 ConverToPersonModels in textconnectorprocessor
 SaveToPeopleFile in textconnectorprocessor
 createteam form - availableTeamMembers, selectTeamMembers WireUpLists
-IDataConnection GetPerson_All
-TextConnection GetPerson_All, 
-SqlConnector db = "ContestSolution";
+IDataConnection GetPerson_All  TeamModel CreateTeam(TeamModel model);
+TextConnection GetPerson_All, CreateTeam
+SqlConnector db = "ContestSolution"; CreateTeam
 addTeamMemberButton_Click
 removeSelectedMemberButton_Click
+class TeamModel  public int id { get; set; }
 
 
 

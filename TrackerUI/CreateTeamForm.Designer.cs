@@ -89,7 +89,7 @@
             this.addTeamMemberButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addTeamMemberButton.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addTeamMemberButton.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.addTeamMemberButton.Location = new System.Drawing.Point(86, 302);
+            this.addTeamMemberButton.Location = new System.Drawing.Point(24, 302);
             this.addTeamMemberButton.Name = "addTeamMemberButton";
             this.addTeamMemberButton.Size = new System.Drawing.Size(243, 61);
             this.addTeamMemberButton.TabIndex = 19;
@@ -260,12 +260,13 @@
             this.createTeamButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.createTeamButton.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.createTeamButton.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.createTeamButton.Location = new System.Drawing.Point(314, 733);
+            this.createTeamButton.Location = new System.Drawing.Point(413, 644);
             this.createTeamButton.Name = "createTeamButton";
             this.createTeamButton.Size = new System.Drawing.Size(352, 61);
             this.createTeamButton.TabIndex = 25;
             this.createTeamButton.Text = "Create Team";
             this.createTeamButton.UseVisualStyleBackColor = false;
+            this.createTeamButton.Click += new System.EventHandler(this.createTeamButton_Click);
             // 
             // CreateTeamForm
             // 
