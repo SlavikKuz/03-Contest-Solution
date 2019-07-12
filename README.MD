@@ -111,17 +111,17 @@ Methods that `TextConnector` uses are implemented in `class TestConnectorProsess
 
 4.2. Prize form<br/>
 
-We create a reward for winning places in the contest. The program checks the correct input in every fields, and then saves data to both database and .csv file.
+The form creates rewards for winners in the contest.
 
-<img src="/Readme/01_CreatePrize.png?raw=true" width="640"/>
+<img src="/Readme/01_CreatePrize.png?raw=true" width="320"/>
 
-This form contains fields `Place Number`, `Place Name`, `Prize Amount`, `Prize Percentage` and `Create Prize` button.
+Event handlers in form `CreatePrizeForm.cs`:
 
-### `Create` click >> `ValidateForm()` >> `new PrizeModel(args)` >> `CreatePrize(model)` >> "Clear up" form;
+#### `Create` click -> `ValidateForm()` -> `new PrizeModel(args)` -> `CreatePrize(model)` -> Clear form
 
-`PrizeModel class` contains user's constructor that uses these field to initiate properties of the instance of the class. The constructor parses string values in the fileds, that will be saved later.
+A private method `ValidateForm()` inspects the fullfilling of the form, and shows message *`Please, check the form!`* if any problem appears. If the validation is passed, a new `PrizeModel` instance is created. `PrizeModel class` contains a user's constructor parses string values from the form to the properties.
 
-`CreatePrizeForm` form has a private method `ValidateForm()` that checks the correct input, and shows message *`Please, check the form!`* otherwise. Method `createPrizeButton_Click`, if the validation is succesfull, invokes user's constructor of `PrizeModel class` and creates an instance of a class. Then the instance is stored in according to `DatabaseType` from `GlobalConfig.Connections`. After successfull adding data, the method resets fields values.
+A weak reference calls a static property `GlobalConfig.Connection` that returns `IDataConnection` interface containing an abstract method `CreatePrize(PrizeModel model)`. The `GlobalConfig.Connection` property can return instance of `SqlConnector` or `TextConnector` class that both implement `IDataConnection` interface. `CreatePrize(model)` method stores the instance to Database or .csv file according to `DatabaseType` from `GlobalConfig.Connections`. After that the form is cleared.
 
 4.3. Create form<br/>
 The form helps to create a new team player, select existing member, make a team, add a new team, and delete selected.
