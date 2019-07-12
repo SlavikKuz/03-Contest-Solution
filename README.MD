@@ -89,7 +89,7 @@
 ### <a href='#03' id='03' class='anchor' aria-hidden='true'>3.0. Database diagram
 </a>
 
-<img src="/Readme/DBDiagram.PNG?raw=true" width="640"/>
+<img src="/Readme/00_DBDiagram.png?raw=true" width="640"/>
 
 ### <a href='#04' id='03' class='anchor' aria-hidden='true'>4.0. Planning solution</a>
 
@@ -111,11 +111,13 @@ Methods that `TextConnector` uses are implemented in `class TestConnectorProsess
 
 4.2. Prize form<br/>
 
-We create a reward for winning places in the contest. The program checks the correct input in every fields, and then saves data to both database and txt file.
+We create a reward for winning places in the contest. The program checks the correct input in every fields, and then saves data to both database and .csv file.
 
-<br/>bilde prize form<br/>
+<img src="/Readme/01_CreatePrize.png?raw=true" width="640"/>
 
 This form contains fields `Place Number`, `Place Name`, `Prize Amount`, `Prize Percentage` and `Create Prize` button.
+
+### `Create` click >> `ValidateForm()` >> `new PrizeModel(args)` >> `CreatePrize(model)` >> "Clear up" form;
 
 `PrizeModel class` contains user's constructor that uses these field to initiate properties of the instance of the class. The constructor parses string values in the fileds, that will be saved later.
 
