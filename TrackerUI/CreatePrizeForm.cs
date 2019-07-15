@@ -20,6 +20,14 @@ namespace TrackerUI
             InitializeComponent();
         }
 
+        public PrizeModel PrizeModel
+        {
+            get => default(PrizeModel);
+            set
+            {
+            }
+        }
+
         private void createPrizeButton_Click(object sender, EventArgs e)
         {
             if (ValidateForm())

@@ -26,16 +26,16 @@ namespace TrackerUI
             WireUpLists();
         }
 
-        private void CreateSampleData()
-        {
-            availableTeamMembers.Add(new PersonModel { FirstName = "Slavik", LastName = "Kuz" });
-            availableTeamMembers.Add(new PersonModel { FirstName = "John", LastName = "Doe" });
-            availableTeamMembers.Add(new PersonModel { FirstName = "Ola", LastName = "Nordmann" });
+        //private void CreateSampleData()
+        //{
+        //    availableTeamMembers.Add(new PersonModel { FirstName = "Slavik", LastName = "Kuz" });
+        //    availableTeamMembers.Add(new PersonModel { FirstName = "John", LastName = "Doe" });
+        //    availableTeamMembers.Add(new PersonModel { FirstName = "Ola", LastName = "Nordmann" });
 
-            selectedTeamMembers.Add(new PersonModel { FirstName = "Quincy", LastName = "Jones " });
-            selectedTeamMembers.Add(new PersonModel { FirstName = "Sara", LastName = "Silverman " });
-            selectedTeamMembers.Add(new PersonModel { FirstName = "Tina", LastName = "Fay " });
-        }
+        //    selectedTeamMembers.Add(new PersonModel { FirstName = "Quincy", LastName = "Jones " });
+        //    selectedTeamMembers.Add(new PersonModel { FirstName = "Sara", LastName = "Silverman " });
+        //    selectedTeamMembers.Add(new PersonModel { FirstName = "Tina", LastName = "Fay " });
+        //}
 
         private void WireUpLists()
         {

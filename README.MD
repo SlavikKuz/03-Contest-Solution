@@ -119,39 +119,48 @@ Event handlers in form `CreatePrizeForm.cs`:
 
 #### `Create` click -> `ValidateForm()` -> `new PrizeModel(args)` -> `CreatePrize(model)` -> Clear form
 
+<img src="/Readme/CreatePrizeDiagram.png?raw=true" width="320"/>
+
 A private method `ValidateForm()` inspects the fullfilling of the form, and shows message *`Please, check the form!`* if any problem appears. If the validation is passed, a new `PrizeModel` instance is created. `PrizeModel class` contains a user's constructor that parses string values from the form to the fields.
 
 A weak reference calls a static property `GlobalConfig.Connection` that returns `IDataConnection` interface containing an abstract method `CreatePrize(PrizeModel model)`. The `GlobalConfig.Connection` property can return instance of `SqlConnector` or `TextConnector` class that both implement `IDataConnection` interface. `CreatePrize(model)` method stores the instance to Database or .csv file according to `DatabaseType` from `GlobalConfig.Connections`. After that the form is cleared.
 
 4.3. Create form<br/>
-The form helps to create a new team player, select existing member, make a team, add a new team, and delete selected.
+The form helps to create a new team player, select existing member, make a team, add a new team, and remove selected members from the team.
 
 <img src="/Readme/02_CreateTeam.png?raw=true" width="320"/>
 
-Form contains fields ...
+`CreateTeamForm.cs` structure:
+- `List<PersonModel> availableTeamMembers` keeps the list of all available players to make teams. It is recieved from `GlobalConfig.Connection` property that returns instance (`SqlConnector` or `TextConnector`) which implements method `GetPerson_All()` from `IDataConnection` interface. `GetPerson_All()` returns `List<PersonModel>`:
+  - in `SqlConnector class`, the method connects to the database, executes stored procedure `dbo.spPeople_GetAll`, and grabs all the records from table `People`.
+###  - in `TextConnector class`, it READS FROM FILE.
+ 
+-  `List<PersonModel> selectedTeamMembers` is a new list of `PersonModels`, that is used to keep a new list of selected players (from `availableTeamMembers`) to make a team.
 
-CreateTeamForm, on event createMemberButton_Click validates form. If the validation is sucessfull a new instance of PersonModel is created, and properties are instantiated with values from the CreateForm. 
+- `private bool ValidateForm()` checks if fileds `First Name`, `Last Name`, `Email`, `Cellphone` contain values.
 
-Then implements CreatePerson from GlobalConfig, adds model to the sql or txt, and return empty values to the form. In case of fail, notifies the user "Please check the input!". ValidateForm() makes sure that every field in the form has a string loger 0.
+- `private void WireUpLists()` is used to refresh DropDownList `Select Team Member` which contains list of available members, and refresh TextBox which shows selected members for making a team. The method is called when the form is created and after any change in both lists.
 
-change:
-Text connector - new PeopleFile
-ConverToPersonModels in textconnectorprocessor
-SaveToPeopleFile in textconnectorprocessor
-createteam form - availableTeamMembers, selectTeamMembers WireUpLists
-IDataConnection GetPerson_All  TeamModel CreateTeam(TeamModel model);
-TextConnection GetPerson_All, CreateTeam
-SqlConnector db = "ContestSolution"; CreateTeam
-addTeamMemberButton_Click
-removeSelectedMemberButton_Click
-class TeamModel  public int id { get; set; }
+Event handlers in form `CreatePrizeForm.cs`:
 
+#### `Create Member` click -> `ValidateForm()` -> `new PersonModel(args)` -> `CreatePerson(p)` -> `selectedTeamMembers.Add(p)` -> `WireUpLists()` -> Clear form
 
+`ValidateForm()` method inspects the form, and shows message *`Please check the input!`* if any problem appears. If the validation is passed, a new `PersonModel` instance is created, and values are assigned to its properties.
 
+A weak reference calls a static property `GlobalConfig.Connection` that returns `IDataConnection` interface containing an abstract method `CreatePerson(args)`. The `GlobalConfig.Connection` property can return instance of `SqlConnector` or `TextConnector` class that both implement `IDataConnection` interface. `CreatePerson(p)` method stores the instance to the Database or .csv file according to `DatabaseType` from `GlobalConfig.Connections`.
 
+`PersonModel p` is added then to the list of `selectedTeamMembers`, which may already contain a list of members, if our data files were not empty. `WireUpLists()` method refreshes view of the list. After that the form is cleared.
 
+#### `Add Member` click -> `new PersonModel()` from `availableTeamMembers` -> `availableTeamMembers.Remove(p)` -> `selectedTeamMembers.Add(p)` -> `WireUpLists()`
 
+When the member is selected in `Select Team Member` field (`List<PersonModel> availableTeamMembers`), a new `PersonModel` instance captures selected value from the list and upcasts it to the `PersonModel` type. Then, the created `PersonModel` instance is removed from the list of availableTeamMembers, and is added to ListBox (`List<PersonModel> selectedTeamMembers`). The form is refreshed to show the updated lists.
 
-### <a href='#04' id='04' class='anchor' aria-hidden='true'>4.0. </a>
-### <a href='#05' id='05' class='anchor' aria-hidden='true'>5.0. </a>
-### <a href='#06' id='06' class='anchor' aria-hidden='true'>6.0. </a>
+#### `Remove Selected` click -> `new PersonModel()` from `selectedTeamMembers` -> `selectedTeamMembers.Remove(p)` -> `availableTeamMembers.Add(p)` -> `WireUpLists()`
+
+This set of actions is opposite to `Add Member` click when an insatce is removed from `selectedTeamMembers` and is added to `availableTeamMembers`.
+
+#### `Create Team` click -> `new TeamModel` -> `CreateTeam(t)` -> NOT FINISHED
+
+A new instance of `TeamModel` is created. Property `TeamName` is taken form `Team Name` field, and `TeamMembers` is a `List<PersonModel> selectedTeamMembers`.
+
+A weak reference calls a static property `GlobalConfig.Connection` that returns `IDataConnection` interface containing an abstract method `CreateTeam(args)`. The `GlobalConfig.Connection` property can return instance of `SqlConnector` or `TextConnector` class that both implement `IDataConnection` interface. `CreateTeam(t)` method stores the instance to the Database or .csv file according to `DatabaseType` from `GlobalConfig.Connections`.
