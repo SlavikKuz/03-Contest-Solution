@@ -10,7 +10,7 @@ using TrackerLibrary.Models;
 //extra specific namespace, available only here
 namespace TrackerLibrary.DataAccess.TextHelpers
 {
-    public static class TestConnectorProsessor
+    public static class TextConnectorProsessor
     {
         public static string FullFilePath(this string fileName) // extention method
         {

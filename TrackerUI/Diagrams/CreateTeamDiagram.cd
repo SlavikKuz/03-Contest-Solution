@@ -1,36 +1,36 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="TrackerUI.createPrizeForm">
-    <Position X="0.5" Y="0.5" Width="2" />
+  <Class Name="TrackerUI.CreateTeamForm">
+    <Position X="0.5" Y="0.5" Width="2.75" />
     <TypeIdentifier>
-      <HashCode>AACAAAAAECEAAAEAAACAAAACBAQBAAAhEAAAAAoACAA=</HashCode>
-      <FileName>CreatePrizeForm.cs</FileName>
+      <HashCode>AAAAAAIAGWoAAYQARAWAAAQTAAggAAAhAAoAAgAAIIA=</HashCode>
+      <FileName>CreateTeamForm.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="TrackerLibrary.GlobalConfig">
-    <Position X="5.25" Y="1.75" Width="2.25" />
+  <Class Name="TrackerLibrary.Models.PersonModel">
+    <Position X="3.5" Y="2" Width="1.75" />
     <TypeIdentifier />
   </Class>
-  <Class Name="TrackerLibrary.Models.PrizeModel">
-    <Position X="2.75" Y="1.5" Width="2.25" />
+  <Class Name="TrackerLibrary.GlobalConfig">
+    <Position X="5.5" Y="2.5" Width="1.5" />
     <TypeIdentifier />
   </Class>
   <Class Name="TrackerLibrary.DataAccess.SqlConnector">
-    <Position X="9.5" Y="0.75" Width="1.5" />
+    <Position X="9" Y="1.5" Width="1.5" />
     <TypeIdentifier />
-    <Lollipop Position="0.214" />
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="TrackerLibrary.DataAccess.TextConnector">
-    <Position X="9.5" Y="3" Width="1.5" />
+    <Position X="9" Y="3.75" Width="1.5" />
     <TypeIdentifier />
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="TrackerLibrary.DataAccess.TextHelpers.TextConnectorProsessor">
-    <Position X="11.25" Y="3" Width="2" />
+    <Position X="10.75" Y="3.75" Width="2" />
     <TypeIdentifier />
   </Class>
   <Interface Name="TrackerLibrary.DataAccess.IDataConnection">
-    <Position X="7.75" Y="1.75" Width="1.5" />
+    <Position X="7.25" Y="2.5" Width="1.5" />
     <TypeIdentifier />
   </Interface>
   <Font Name="Segoe UI" Size="9" />

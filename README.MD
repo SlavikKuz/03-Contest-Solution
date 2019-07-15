@@ -41,7 +41,7 @@
 
 1.3. Solution Concepts:
 - Windows Forms and Class Library;
-- SQL/TXT file;
+- SQL/CSV file;
 - one user at a time on one application;
 - email sending;
 - custom events;
@@ -84,7 +84,9 @@
 - MatchupEntry
   - TeamCompeting (Team);
   - Score (double);
-  - ParentMatchup (Matchup);
+  - ParentMatchup (Matchup).
+
+Orginized in forlders
 
 ### <a href='#03' id='03' class='anchor' aria-hidden='true'>3.0. Database diagram
 </a>
@@ -95,15 +97,33 @@
 
 4.1. Data Connection<br/>
 
-We create `IDataConnection interface` which contains an abstract methods that are implemented in two classes that write data to DB or .txt file.
-- `PrizeModel CreatePrize()`;
-- `PersonModel CreatePerson()`;
+<img src="/Readme/DataConnectionDiagram.png?raw=true" width="640"/>
 
-`Class GlobalConfig` is a public static class for storing data sources info. It has the `IDataConnection` static property for data connection. Static method `InitializeConnections` creates connections to SQL DB or .txt file, depends on the privious choice. `CnnString` method goes to `App.config` and get previously added `connectionStrings`. Choice options are from `Enum.cs` which will store all the enums for the current solution. 
+We create `IDataConnection interface` which contains abstract methods and implementes in two classes that write data to DB or .csv file.
+- `PrizeModel CreatePrize(args)`,
+- `PersonModel CreatePerson(args)`,
+- `TeamModel CreateTeam(args)`,
+- `List<PersonModel> GetPerson_All()`.
 
-`Class SqlConnector : IDataConnection` saves data to DB.
-It establishes connection. Then using `Dapper lib` executes the store procedure in the DB with the set of parameters. Query returns output value for `@id`.
-`public PersonModel CreatePerson(PersonModel model)` method establishes connection to DB and executes the store procedure, where parameters are taken from fields in form `CreatePerson`. Then returns the `Person model`.
+`Class GlobalConfig` is a public static class which defines SQL or CSV type connection for the program. 
+- It has a property `Connection` which returns an instance of `IDataConnection` type (`SqlConnector` or `TextConnector`). 
+- Method `InitializeConnections (args)` takes an instance of `enum DatabaseType` with value Sql or TextFile. Depending on that value, the `Connection` property is a new instance of `SqlConnector` or `TextConnector` class.
+- `CnnString(string name)` method returns the value of `connectionString` with an attribute `name` from the `connectionStrings` section in `App.config`.
+
+`Enum.cs` stores all the enums that we will need for the current solution.
+
+`Class SqlConnector : IDataConnection` saves data to DB. It implements `IDataConnection interface`.
+- `public PrizeModel CreatePrize(PrizeModel model)` method establishes connection to the DB `using SqlConnection(GlobalConfig.CnnString())`. Then it constructs a new dynamic parameter bag `var p` (syntax from `Assembly Dapper`) and adds objects (the properties of accepted `model` instance) and names (according to the names of columns in `Prize table` in the DB). 
+For the correct work with the DB we need to receive `@id` of the last record because it increments automatically in the table. In the bag, `@id` has a `ParameterDirection.Output` parameter, and `output` type in the stored Sql procedure. 
+The CreatePrize(PrizeModel model) executes on the connection a stored DB procedure `dbo.spPrizes_Insert` and inserts `p` to the database. The value of `Id` is sent out to the method. `model.Id` receives the value from database, and the updated `model` instance is returned.
+
+- `public PersonModel CreatePerson(PersonModel model)` is similar to the previous `CreatePrize(args)` method.
+
+- `public TeamModel CreateTeam(TeamModel model)` has two steps. The first step is totally similar to the prevoius methods. On the second step the method processes instances of `PersonModel` that are in the `team`. Foreach PersonModel in the team the method constructs dynamic parameter bag, adds values and calls stored Sql procedure. The `model` is returned.
+
+- `public List<PersonModel> GetPerson_All()` method establishes connection to the DB `using SqlConnection(GlobalConfig.CnnString())`, and fills a new `List<PersonModel> output` with result of executed query `dbo.spPeople_GetAll` in the database. List of all registered members is returned.
+ 
+***
 
 `Class TextConnector : IDataConnection` saves data to .csv file. File path is stored in the `App.config`. The class contains `const PrizesFile` that stores file name *`PrizeModels.csv`*. Method `CreatePrize` loads the file, reads lines into the least, and convert strings to `PrizeModel` instances. The method also receives last `id` from the file, and adds +1 to create id for the new record *(SQL has autoincrement option)*. Is the file is empty, `id = 1`. Then the method creates a new instance with the id, makes a string of the instance `PrizeModel`, and writes the string down to the end of the file. The method returns curren `model` instance that can be used by other models.
 
@@ -119,13 +139,13 @@ Event handlers in form `CreatePrizeForm.cs`:
 
 #### `Create` click -> `ValidateForm()` -> `new PrizeModel(args)` -> `CreatePrize(model)` -> Clear form
 
-<img src="/Readme/CreatePrizeDiagram.png?raw=true" width="320"/>
+<img src="/Readme/CreatePrizeDiagram.png?raw=true" width="640"/>
 
 A private method `ValidateForm()` inspects the fullfilling of the form, and shows message *`Please, check the form!`* if any problem appears. If the validation is passed, a new `PrizeModel` instance is created. `PrizeModel class` contains a user's constructor that parses string values from the form to the fields.
 
 A weak reference calls a static property `GlobalConfig.Connection` that returns `IDataConnection` interface containing an abstract method `CreatePrize(PrizeModel model)`. The `GlobalConfig.Connection` property can return instance of `SqlConnector` or `TextConnector` class that both implement `IDataConnection` interface. `CreatePrize(model)` method stores the instance to Database or .csv file according to `DatabaseType` from `GlobalConfig.Connections`. After that the form is cleared.
 
-4.3. Create form<br/>
+4.3. Create Team form<br/>
 The form helps to create a new team player, select existing member, make a team, add a new team, and remove selected members from the team.
 
 <img src="/Readme/02_CreateTeam.png?raw=true" width="320"/>
@@ -140,6 +160,8 @@ The form helps to create a new team player, select existing member, make a team,
 - `private bool ValidateForm()` checks if fileds `First Name`, `Last Name`, `Email`, `Cellphone` contain values.
 
 - `private void WireUpLists()` is used to refresh DropDownList `Select Team Member` which contains list of available members, and refresh TextBox which shows selected members for making a team. The method is called when the form is created and after any change in both lists.
+
+<img src="/Readme/CreateTeamDiagram.png?raw=true" width="640"/>
 
 Event handlers in form `CreatePrizeForm.cs`:
 

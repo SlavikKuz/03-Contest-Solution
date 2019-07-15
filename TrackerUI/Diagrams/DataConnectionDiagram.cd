@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="TrackerLibrary.DataAccess.SqlConnector">
+    <Position X="4.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TrackerLibrary.DataAccess.TextConnector">
+    <Position X="4.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TrackerLibrary.DataAccess.TextHelpers.TextConnectorProsessor">
+    <Position X="6" Y="2.75" Width="2" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="TrackerLibrary.GlobalConfig">
+    <Position X="0.5" Y="1.75" Width="1.75" />
+    <TypeIdentifier />
+  </Class>
+  <Interface Name="TrackerLibrary.DataAccess.IDataConnection">
+    <Position X="2.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Enum Name="TrackerLibrary.DatabaseType">
+    <Position X="0.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier />
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

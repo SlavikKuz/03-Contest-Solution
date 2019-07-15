@@ -103,6 +103,9 @@
     <EmbeddedResource Include="TournamentViewerForm.resx">
       <DependentUpon>TournamentViewerForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Diagrams\CreatePrizeDiagram.cd" />
+    <None Include="Diagrams\CreateTeamDiagram.cd" />
+    <None Include="Diagrams\DataConnectionDiagram.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
