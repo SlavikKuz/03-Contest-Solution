@@ -219,9 +219,9 @@
             this.prizesLabel.ForeColor = System.Drawing.Color.DodgerBlue;
             this.prizesLabel.Location = new System.Drawing.Point(485, 346);
             this.prizesLabel.Name = "prizesLabel";
-            this.prizesLabel.Size = new System.Drawing.Size(302, 54);
+            this.prizesLabel.Size = new System.Drawing.Size(125, 54);
             this.prizesLabel.TabIndex = 22;
-            this.prizesLabel.Text = "Teams / Players:";
+            this.prizesLabel.Text = "Prizes";
             // 
             // prizesListBox
             // 
