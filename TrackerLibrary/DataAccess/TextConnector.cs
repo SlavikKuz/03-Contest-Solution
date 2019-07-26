@@ -14,6 +14,7 @@ namespace TrackerLibrary.DataAccess
         private const string PrizesFile = "PrizeModels.csv"; //pascale case because const
         private const string PeopleFile = "PersonModels.csv";
         private const string TeamFile = "TeamModels.csv";
+        private const string TournamentFile = "TournamentMadels.csv";
 
         public PersonModel CreatePerson(PersonModel model)
         {
@@ -51,7 +52,7 @@ namespace TrackerLibrary.DataAccess
             
             if (prizes.Count >0 ) //file is not empty, gets highest 
             {
-                currentId = currentId = prizes.OrderByDescending(x => x.Id).First().Id + 1;
+                currentId =  prizes.OrderByDescending(x => x.Id).First().Id + 1;
             }
 
             model.Id = currentId; //empty file, id becomes 1
@@ -80,7 +81,7 @@ namespace TrackerLibrary.DataAccess
 
             if (teams.Count > 0) //file is not empty, gets highest 
             {
-                currentId = currentId = teams.OrderByDescending(x => x.Id).First().Id + 1;
+                currentId = teams.OrderByDescending(x => x.Id).First().Id + 1;
             }
 
             model.Id = currentId;
@@ -94,7 +95,28 @@ namespace TrackerLibrary.DataAccess
 
         public List<TeamModel> GetTeam_All()
         {
-            throw new NotImplementedException();
+            return TeamFile.FullFilePath().LoadFile().ConvertToTeamModels(PeopleFile);
+        }
+
+        public void CreateTournament(TournamentModel model)
+        {
+            List<TournamentModel> tournaments = TournamentFile
+                .FullFilePath()
+                .LoadFile()
+                .ConvertToTournamentModels(TeamFile, PeopleFile, PrizesFile);
+
+            int currentId = 1;
+
+            if (tournaments.Count > 0) //file is not empty, gets highest 
+            {
+                currentId = tournaments.OrderByDescending(x => x.Id).First().Id + 1;
+            }
+
+            model.Id = currentId;
+
+            tournaments.Add(model);
+
+            tournaments.SaveToTournamentFile(TournamentFile);
         }
     }
 }
