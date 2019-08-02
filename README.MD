@@ -1,6 +1,6 @@
 #### Hi! This is a Contest Winner solution (.Net, WinForms, MSSQL, Dapper) 
 
-### *(document in progress)*
+### *(document in progress, update 02.08.2019)*
 
 1.0. [Solution requirements](#01)<br/>
 	1.1. General specifics.<br/>
