@@ -1,6 +1,6 @@
 #### Hi! This is a Contest Winner solution (.Net, WinForms, MSSQL, Dapper) 
 
-### *(document in progress, update 02.08.2019)*
+### *(document is in progress, update 18.08.2019)*
 
 1.0. [Solution requirements](#01)<br/>
 	1.1. General specifics.<br/>
@@ -110,7 +110,7 @@ Orginized in forlders
 
 4.3. `Enum.cs` stores all the enums that we will need for the current solution.
 
-4.4. `Class SqlConnector : IDataConnection` saves data to DB.
+4.4. `Class SqlConnector : IDataConnection` saves data to the DB.
 - `public PrizeModel CreatePrize(PrizeModel model)` method establishes connection to the DB `using SqlConnection(GlobalConfig.CnnString())`. Then it constructs a new dynamic parameter bag `var p` (syntax from `Assembly Dapper`) and adds objects (the properties of `model` instance) and names (according to the column names in `dbo.Prizes`), similar to Dictionary collection. 
 `model.Id` property is received from the DB, because it is an autoincremented key. Therefore `@id` is added to the list with a `ParameterDirection.Output` parameter. It also has an `output` type in the stored Sql procedure. 
 Then `CreatePrize(PrizeModel model)` executes on the `connection` a stored DB procedure `dbo.spPrizes_Insert` and inserts `p` to the database. The value of `Id` sends out to the method. `model.Id` receives the `Id` value from database, and the updated `model` is returned.
