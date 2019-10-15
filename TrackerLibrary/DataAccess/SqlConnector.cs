@@ -9,7 +9,7 @@ using TrackerLibrary.Models;
 
 namespace TrackerLibrary.DataAccess
 {
-    public class SqlConnector : IDataConnection
+    public class  SqlConnector : IDataConnection
     {
         private const string db = "ContestSolution";
 

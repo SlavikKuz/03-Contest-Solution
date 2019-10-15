@@ -16,3 +16,12 @@ c:\Users\slavi\source\repos\ContestWinner\TrackerLibrary\obj\Debug\TrackerLibrar
 c:\Users\slavi\source\repos\ContestWinner\TrackerLibrary\obj\Debug\TrackerLibrary.csproj.CopyComplete
 c:\Users\slavi\source\repos\ContestWinner\TrackerLibrary\obj\Debug\TrackerLibrary.dll
 c:\Users\slavi\source\repos\ContestWinner\TrackerLibrary\obj\Debug\TrackerLibrary.pdb
+c:\Users\slavi\source\repos\05 - ContestWinner, Tim Corey\TrackerLibrary\bin\Debug\TrackerLibrary.dll
+c:\Users\slavi\source\repos\05 - ContestWinner, Tim Corey\TrackerLibrary\bin\Debug\TrackerLibrary.pdb
+c:\Users\slavi\source\repos\05 - ContestWinner, Tim Corey\TrackerLibrary\bin\Debug\Dapper.dll
+c:\Users\slavi\source\repos\05 - ContestWinner, Tim Corey\TrackerLibrary\bin\Debug\Dapper.xml
+c:\Users\slavi\source\repos\05 - ContestWinner, Tim Corey\TrackerLibrary\obj\Debug\TrackerLibrary.csprojAssemblyReference.cache
+c:\Users\slavi\source\repos\05 - ContestWinner, Tim Corey\TrackerLibrary\obj\Debug\TrackerLibrary.csproj.CoreCompileInputs.cache
+c:\Users\slavi\source\repos\05 - ContestWinner, Tim Corey\TrackerLibrary\obj\Debug\TrackerLibrary.csproj.CopyComplete
+c:\Users\slavi\source\repos\05 - ContestWinner, Tim Corey\TrackerLibrary\obj\Debug\TrackerLibrary.dll
+c:\Users\slavi\source\repos\05 - ContestWinner, Tim Corey\TrackerLibrary\obj\Debug\TrackerLibrary.pdb

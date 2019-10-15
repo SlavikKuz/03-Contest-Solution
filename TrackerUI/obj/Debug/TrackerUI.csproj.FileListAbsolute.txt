@@ -36,3 +36,22 @@ c:\Users\slavi\source\repos\ContestWinner\TrackerUI\obj\Debug\TrackerUI.csproj.C
 c:\Users\slavi\source\repos\ContestWinner\TrackerUI\obj\Debug\TrackerUI.csproj.CopyComplete
 c:\Users\slavi\source\repos\ContestWinner\TrackerUI\obj\Debug\TrackerUI.exe
 c:\Users\slavi\source\repos\ContestWinner\TrackerUI\obj\Debug\TrackerUI.pdb
+c:\Users\slavi\source\repos\05 - ContestWinner, Tim Corey\TrackerUI\bin\Debug\TrackerUI.exe.config
+c:\Users\slavi\source\repos\05 - ContestWinner, Tim Corey\TrackerUI\bin\Debug\TrackerUI.exe
+c:\Users\slavi\source\repos\05 - ContestWinner, Tim Corey\TrackerUI\bin\Debug\TrackerUI.pdb
+c:\Users\slavi\source\repos\05 - ContestWinner, Tim Corey\TrackerUI\bin\Debug\TrackerLibrary.dll
+c:\Users\slavi\source\repos\05 - ContestWinner, Tim Corey\TrackerUI\bin\Debug\Dapper.dll
+c:\Users\slavi\source\repos\05 - ContestWinner, Tim Corey\TrackerUI\bin\Debug\TrackerLibrary.pdb
+c:\Users\slavi\source\repos\05 - ContestWinner, Tim Corey\TrackerUI\bin\Debug\Dapper.xml
+c:\Users\slavi\source\repos\05 - ContestWinner, Tim Corey\TrackerUI\obj\Debug\TrackerUI.csprojAssemblyReference.cache
+c:\Users\slavi\source\repos\05 - ContestWinner, Tim Corey\TrackerUI\obj\Debug\TrackerUI.createPrizeForm.resources
+c:\Users\slavi\source\repos\05 - ContestWinner, Tim Corey\TrackerUI\obj\Debug\TrackerUI.CreateTeamForm.resources
+c:\Users\slavi\source\repos\05 - ContestWinner, Tim Corey\TrackerUI\obj\Debug\TrackerUI.CreateTournamentForm.resources
+c:\Users\slavi\source\repos\05 - ContestWinner, Tim Corey\TrackerUI\obj\Debug\TrackerUI.Properties.Resources.resources
+c:\Users\slavi\source\repos\05 - ContestWinner, Tim Corey\TrackerUI\obj\Debug\TrackerUI.tournamentDashbordForm.resources
+c:\Users\slavi\source\repos\05 - ContestWinner, Tim Corey\TrackerUI\obj\Debug\TrackerUI.TournamentViewerForm.resources
+c:\Users\slavi\source\repos\05 - ContestWinner, Tim Corey\TrackerUI\obj\Debug\TrackerUI.csproj.GenerateResource.cache
+c:\Users\slavi\source\repos\05 - ContestWinner, Tim Corey\TrackerUI\obj\Debug\TrackerUI.csproj.CoreCompileInputs.cache
+c:\Users\slavi\source\repos\05 - ContestWinner, Tim Corey\TrackerUI\obj\Debug\TrackerUI.csproj.CopyComplete
+c:\Users\slavi\source\repos\05 - ContestWinner, Tim Corey\TrackerUI\obj\Debug\TrackerUI.exe
+c:\Users\slavi\source\repos\05 - ContestWinner, Tim Corey\TrackerUI\obj\Debug\TrackerUI.pdb
