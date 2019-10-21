@@ -176,6 +176,44 @@ namespace TrackerLibrary.DataAccess.TextHelpers
             File.WriteAllLines(fileName.FullFilePath(), lines);
         }
 
+        public static void SaveRoundsToFile(this TournamentModel model, string matchupFile, string matchupEntryFile)
+        {
+            //loop through each Round
+            //loop through each Matchup
+            //Get the id for the new matchup and save the record
+            //loop through each entry, get the id, and save it
+
+            foreach (List<MatchupModel> round in model.Rounds)
+            {
+                foreach(MatchupModel matchup in round)
+                {
+                    // load all of the matchups from the file
+                    //get the top id and add one
+                    //store the id
+                    //save the matchup record
+
+                    matchup.SaveMatchupToFile(matchupFile, matchupEntryFile);
+
+                   
+                }
+            }
+        }
+
+        public static void SaveMatchupToFile(this MatchupModel matchup, string matchupFile, string matchupEntryFile)
+        {
+
+
+            foreach (MatchupEntryModel entry in matchup.Entries)
+            {
+                entry.SaveEntryToFile(matchupEntryFile);
+            }
+        }
+
+        public static void SaveEntryToFile (this MatchupEntryModel entry, string matchupEntryFile)
+        {
+
+        }
+
         public static void SaveToTournamentFile(this List<TournamentModel> models, string fileName)
         {
             List<string> lines = new List<string>();
