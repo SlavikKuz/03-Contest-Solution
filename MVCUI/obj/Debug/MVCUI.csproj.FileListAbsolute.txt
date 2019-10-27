@@ -77,3 +77,7 @@ C:\Users\slavi\source\repos\05 - ContestWinner, Tim Corey\MVCUI\obj\Debug\MVCUI.
 C:\Users\slavi\source\repos\05 - ContestWinner, Tim Corey\MVCUI\obj\Debug\MVCUI.csproj.CopyComplete
 C:\Users\slavi\source\repos\05 - ContestWinner, Tim Corey\MVCUI\obj\Debug\MVCUI.dll
 C:\Users\slavi\source\repos\05 - ContestWinner, Tim Corey\MVCUI\obj\Debug\MVCUI.pdb
+c:\Users\slavi\source\repos\05 - ContestWinner, Tim Corey\MVCUI\bin\TrackerLibrary.dll
+c:\Users\slavi\source\repos\05 - ContestWinner, Tim Corey\MVCUI\bin\Dapper.dll
+c:\Users\slavi\source\repos\05 - ContestWinner, Tim Corey\MVCUI\bin\TrackerLibrary.pdb
+c:\Users\slavi\source\repos\05 - ContestWinner, Tim Corey\MVCUI\bin\Dapper.xml
