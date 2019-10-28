@@ -22,6 +22,7 @@ namespace MVCUI.Controllers
         public ActionResult Create()
         {
             List<PersonModel> people = GlobalConfig.Connection.GetPerson_All();
+
             TeamMVCModel input = new TeamMVCModel();
 
             input.TeamMembers = people.Select(x => new SelectListItem { Text = x.FullName, Value = x.Id.ToString() }).ToList();

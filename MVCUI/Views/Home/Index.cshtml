@@ -11,7 +11,8 @@
         <div class="jumbotron">
             <h1>Sport Fun!</h1>
             <p class="lead">Track you sport tournaments easily and having fun.</p>
-            <p><a href="https://asp.net" class="btn btn-primary btn-lg">Create a Tournament</a></p>
+            <p>@Html.ActionLink("Create a Tournament", "Create", "Tournaments", new { area = "" }, new { @class = "btn btn-primary btn-lg" })</p>
+            @*<p><a href="https://asp.net" class="btn btn-primary btn-lg">Create a Tournament</a></p>*@
         </div>
 
         <div class="row">
