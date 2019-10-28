@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.28307.705
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrackerLibrary", "TrackerLibrary\TrackerLibrary.csproj", "{559578AA-E3FF-4C4B-ABCE-131BE2F1084F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrackerUI", "TrackerUI\TrackerUI.csproj", "{2BBC713B-16D6-4A44-B416-169E66D44FD9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFormsUI", "TrackerUI\WinFormsUI.csproj", "{2BBC713B-16D6-4A44-B416-169E66D44FD9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVCUI", "MVCUI\MVCUI.csproj", "{DDDDC1DE-D917-42F5-BFAE-6566010CDE4E}"
 EndProject
