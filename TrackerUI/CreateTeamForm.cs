@@ -14,8 +14,8 @@ namespace TrackerUI
 {
     public partial class CreateTeamForm : Form
     {
-        private List<PersonModel> availableTeamMembers = GlobalConfig.Connection.GetPerson_All();
-        private List<PersonModel> selectedTeamMembers = new List<PersonModel>();
+        private List<PrizeModel> availableTeamMembers = GlobalConfig.Connection.GetPerson_All();
+        private List<PrizeModel> selectedTeamMembers = new List<PrizeModel>();
         private ITeamRequestor callingForm;
 
         public CreateTeamForm(ITeamRequestor caller)
@@ -45,7 +45,7 @@ namespace TrackerUI
         {
             if (ValidateForm())
             {
-                PersonModel p = new PersonModel();
+                PrizeModel p = new PrizeModel();
                 p.FirstName = firstNameValue.Text;
                 p.LastName = lastNameValue.Text;
                 p.EmailAddress = emailValue.Text;
@@ -95,7 +95,7 @@ namespace TrackerUI
 
         private void addTeamMemberButton_Click(object sender, EventArgs e)
         {
-            PersonModel p = (PersonModel)selectTeamMemberDropDown.SelectedItem; //cast
+            PrizeModel p = (PrizeModel)selectTeamMemberDropDown.SelectedItem; //cast
             
             //empty selection 
             if (p != null)
@@ -109,7 +109,7 @@ namespace TrackerUI
 
         private void removeSelectedMemberButton_Click(object sender, EventArgs e)
         {
-            PersonModel p = (PersonModel)teamMembersListBox.SelectedItem;
+            PrizeModel p = (PrizeModel)teamMembersListBox.SelectedItem;
 
             //empty selection 
             if (p != null) 

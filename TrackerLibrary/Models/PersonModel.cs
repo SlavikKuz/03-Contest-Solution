@@ -39,6 +39,7 @@ namespace TrackerLibrary.Models
         [Display(Name = "Email")]
         ///regex possibly
         [StringLength(20, MinimumLength = 6)]
+        [DataType(DataType.EmailAddress)]
         [Required]
         public string EmailAddress { get; set; }
 
@@ -46,6 +47,7 @@ namespace TrackerLibrary.Models
         /// Person's cell number
         /// </summary>
         [Display(Name = "Tel.")]
+        [DataType(DataType.PhoneNumber)]
         [StringLength(14, MinimumLength = 8)]
         [Required]
         public string CellPhoneNumber { get; set; }

@@ -109,6 +109,13 @@ namespace TrackerLibrary.DataAccess
             TournamentLogic.UpdateTounamentResults(model);
         }
 
+        public List<PrizeModel> GetPrizes_All()
+        {
+            List<PrizeModel> output = GlobalConfig.PrizesFile.FullFilePath().LoadFile().ConvertToPrizeModels();
+
+            return output;
+        }
+
         public List<TournamentModel> GetTournament_All()
         {
             return GlobalConfig.TournamentFile
