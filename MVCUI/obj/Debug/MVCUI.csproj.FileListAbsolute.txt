@@ -81,3 +81,11 @@ c:\Users\slavi\source\repos\05 - ContestWinner, Tim Corey\MVCUI\bin\TrackerLibra
 c:\Users\slavi\source\repos\05 - ContestWinner, Tim Corey\MVCUI\bin\Dapper.dll
 c:\Users\slavi\source\repos\05 - ContestWinner, Tim Corey\MVCUI\bin\TrackerLibrary.pdb
 c:\Users\slavi\source\repos\05 - ContestWinner, Tim Corey\MVCUI\bin\Dapper.xml
+c:\Users\slavi\source\repos\05 - ContestWinner, Tim Corey\MVCUI\bin\Twilio.dll
+c:\Users\slavi\source\repos\05 - ContestWinner, Tim Corey\MVCUI\bin\System.IdentityModel.Tokens.Jwt.dll
+c:\Users\slavi\source\repos\05 - ContestWinner, Tim Corey\MVCUI\bin\Microsoft.IdentityModel.Tokens.dll
+c:\Users\slavi\source\repos\05 - ContestWinner, Tim Corey\MVCUI\bin\Microsoft.IdentityModel.Logging.dll
+c:\Users\slavi\source\repos\05 - ContestWinner, Tim Corey\MVCUI\bin\TrackerLibrary.dll.config
+c:\Users\slavi\source\repos\05 - ContestWinner, Tim Corey\MVCUI\bin\Twilio.xml
+c:\Users\slavi\source\repos\05 - ContestWinner, Tim Corey\MVCUI\bin\System.IdentityModel.Tokens.Jwt.xml
+c:\Users\slavi\source\repos\05 - ContestWinner, Tim Corey\MVCUI\bin\Microsoft.IdentityModel.Tokens.xml

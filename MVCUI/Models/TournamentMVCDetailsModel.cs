@@ -13,7 +13,7 @@ namespace MVCUI.Models
 
         public List<RoundMVCModel> Rounds { get; set; } = new List<RoundMVCModel>();
 
-        public List<MatchupMVCModel> MyProperty { get; set; }
+        public List<MatchupMVCModel> Matchups { get; set; }
 
     }
 }

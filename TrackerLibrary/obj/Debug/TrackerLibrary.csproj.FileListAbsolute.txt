@@ -25,3 +25,13 @@ c:\Users\slavi\source\repos\05 - ContestWinner, Tim Corey\TrackerLibrary\obj\Deb
 c:\Users\slavi\source\repos\05 - ContestWinner, Tim Corey\TrackerLibrary\obj\Debug\TrackerLibrary.csproj.CopyComplete
 c:\Users\slavi\source\repos\05 - ContestWinner, Tim Corey\TrackerLibrary\obj\Debug\TrackerLibrary.dll
 c:\Users\slavi\source\repos\05 - ContestWinner, Tim Corey\TrackerLibrary\obj\Debug\TrackerLibrary.pdb
+c:\Users\slavi\source\repos\05 - ContestWinner, Tim Corey\TrackerLibrary\bin\Debug\TrackerLibrary.dll.config
+c:\Users\slavi\source\repos\05 - ContestWinner, Tim Corey\TrackerLibrary\bin\Debug\Microsoft.IdentityModel.Logging.dll
+c:\Users\slavi\source\repos\05 - ContestWinner, Tim Corey\TrackerLibrary\bin\Debug\Microsoft.IdentityModel.Tokens.dll
+c:\Users\slavi\source\repos\05 - ContestWinner, Tim Corey\TrackerLibrary\bin\Debug\Newtonsoft.Json.dll
+c:\Users\slavi\source\repos\05 - ContestWinner, Tim Corey\TrackerLibrary\bin\Debug\System.IdentityModel.Tokens.Jwt.dll
+c:\Users\slavi\source\repos\05 - ContestWinner, Tim Corey\TrackerLibrary\bin\Debug\Twilio.dll
+c:\Users\slavi\source\repos\05 - ContestWinner, Tim Corey\TrackerLibrary\bin\Debug\Microsoft.IdentityModel.Tokens.xml
+c:\Users\slavi\source\repos\05 - ContestWinner, Tim Corey\TrackerLibrary\bin\Debug\Newtonsoft.Json.xml
+c:\Users\slavi\source\repos\05 - ContestWinner, Tim Corey\TrackerLibrary\bin\Debug\System.IdentityModel.Tokens.Jwt.xml
+c:\Users\slavi\source\repos\05 - ContestWinner, Tim Corey\TrackerLibrary\bin\Debug\Twilio.xml
