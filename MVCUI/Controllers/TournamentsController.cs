@@ -17,9 +17,58 @@ namespace MVCUI.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+        public ActionResult Details(int id, int roundId = 0)
+        {
+            List<TournamentModel> tournaments = GlobalConfig.Connection.GetTournament_All();
+
+            try
+            {
+                TournamentMVCDetailsModel input = new TournamentMVCDetailsModel();
+                TournamentModel t = tournaments.Where(x => x.Id == id).First();
+
+                input.TournamentName = t.TournamentName;
+
+                var orderedRounds = t.Rounds.OrderBy(x => x.First().MatchupRound).ToList();
+                bool activeFound = false;
+
+                for (int i = 0; i < orderedRounds.Count; i++)
+                {
+                    RoundStatus status = RoundStatus.Locked;
+
+                    if (!activeFound)
+                    {
+                        if (orderedRounds[i].TrueForAll(x => x.Winner != null))
+                        {
+                            status = RoundStatus.Complete;
+                        }
+                        else
+                        {
+                            status = RoundStatus.Active;
+                            activeFound = true;
+                        }
+                    }
+
+                    input.Rounds.Add(new RoundMVCModel { RoundName = "Round " + (i + 1), Status = status, RoundNumber = i + 1 });
+                }
+
+                return View(input);
+            }
+            catch
+            {
+                return RedirectToAction("Index", "Home");
+            }
+        }
+
+        private List<MatchupMVCModel> GetMatchups(List<MatchupModel> input)
+        {
+            List<MatchupMVCModel> output = new List<MatchupMVCModel>();
+
+            return output;
+        }
+
         public ActionResult Create()
         {
-            TournamentMVCModel input = new TournamentMVCModel();
+            TournamentMVCCreateModel input = new TournamentMVCCreateModel();
             List<TeamModel> allTeams = GlobalConfig.Connection.GetTeam_All();
             List<PrizeModel> allPrizes = GlobalConfig.Connection.GetPrizes_All();
 
@@ -32,7 +81,7 @@ namespace MVCUI.Controllers
         // POST: People/Create
         [ValidateAntiForgeryToken()]
         [HttpPost]
-        public ActionResult Create(TournamentMVCModel model)
+        public ActionResult Create(TournamentMVCCreateModel model)
         {
             try
             {

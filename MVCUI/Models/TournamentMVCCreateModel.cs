@@ -7,7 +7,7 @@ using System.Web.Mvc;
 
 namespace MVCUI.Models
 {
-    public class TournamentMVCModel
+    public class TournamentMVCCreateModel
     {
         [Display(Name = "Tournament Name")]
         [Required]
