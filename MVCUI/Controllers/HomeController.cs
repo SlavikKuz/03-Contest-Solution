@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using TrackerLibrary;
 using TrackerLibrary.Models;
+using System.Diagnostics;
 
 namespace MVCUI.Controllers
 {
@@ -12,7 +13,13 @@ namespace MVCUI.Controllers
     {
         public ActionResult Index()
         {
+            var sw = new Stopwatch();
+            sw.Start();
+
             List<TournamentModel> tournaments = GlobalConfig.Connection.GetTournament_All();
+
+            long elapsedMilliseconds = sw.ElapsedMilliseconds;
+
             return View(tournaments);
         }
 

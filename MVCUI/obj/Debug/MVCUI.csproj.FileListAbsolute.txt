@@ -179,3 +179,7 @@ d:\Repos\05 - ContestWinner\MVCUI\obj\Debug\MVCUI.csprojAssemblyReference.cache
 d:\Repos\05 - ContestWinner\MVCUI\obj\Debug\MVCUI.csproj.CopyComplete
 d:\Repos\05 - ContestWinner\MVCUI\obj\Debug\MVCUI.dll
 d:\Repos\05 - ContestWinner\MVCUI\obj\Debug\MVCUI.pdb
+d:\Repos\05 - ContestWinner\MVCUI\bin\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+d:\Repos\05 - ContestWinner\MVCUI\bin\System.Diagnostics.DiagnosticSource.dll
+d:\Repos\05 - ContestWinner\MVCUI\bin\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+d:\Repos\05 - ContestWinner\MVCUI\bin\System.Diagnostics.DiagnosticSource.xml

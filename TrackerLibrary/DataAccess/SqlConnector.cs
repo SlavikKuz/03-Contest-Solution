@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -218,9 +219,17 @@ namespace TrackerLibrary.DataAccess
             List<TournamentModel> output;
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
             {
+                var sw = new Stopwatch();
+                var sw0 = new Stopwatch();
+
+                sw.Start();
+
                 output = connection.Query<TournamentModel>("dbo.spTournaments_GetAll").ToList();
                 var p = new DynamicParameters();
 
+                long elapsedMilliseconds = sw.ElapsedMilliseconds;
+
+                sw0.Start();
                 foreach (TournamentModel t in output)
                 {
                     //populate prizes
@@ -307,6 +316,10 @@ namespace TrackerLibrary.DataAccess
 
                     t.Rounds.Add(currRow);
                 }
+
+                elapsedMilliseconds = sw0.ElapsedMilliseconds;
+
+                int xax = 0;
             }
 
             return output;
