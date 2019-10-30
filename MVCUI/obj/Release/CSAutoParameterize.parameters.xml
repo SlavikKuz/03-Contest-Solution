@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="cw_localdb_30102019-Web.config Connection String" description="cw_localdb_30102019 Connection String used in web.config by the application to access the database." defaultValue="Server=tcp:slvk19azr.database.windows.net,1433;Initial Catalog=cw_localdb_30102019;Persist Security Info=False;User ID=cw;Password=sc%:pA_sASf;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="d:\\Repos\\05\ -\ ContestWinner\\MVCUI\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='cw_localdb_30102019']/@connectionString" />
+  </parameter>
+</parameters>

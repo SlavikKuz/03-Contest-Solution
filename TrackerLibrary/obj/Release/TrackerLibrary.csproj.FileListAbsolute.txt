@@ -16,3 +16,21 @@ c:\Users\slavi\source\repos\05 - ContestWinner, Tim Corey\TrackerLibrary\obj\Rel
 c:\Users\slavi\source\repos\05 - ContestWinner, Tim Corey\TrackerLibrary\obj\Release\TrackerLibrary.csproj.CopyComplete
 c:\Users\slavi\source\repos\05 - ContestWinner, Tim Corey\TrackerLibrary\obj\Release\TrackerLibrary.dll
 c:\Users\slavi\source\repos\05 - ContestWinner, Tim Corey\TrackerLibrary\obj\Release\TrackerLibrary.pdb
+d:\Repos\05 - ContestWinner\TrackerLibrary\bin\Release\TrackerLibrary.dll.config
+d:\Repos\05 - ContestWinner\TrackerLibrary\bin\Release\TrackerLibrary.dll
+d:\Repos\05 - ContestWinner\TrackerLibrary\bin\Release\TrackerLibrary.pdb
+d:\Repos\05 - ContestWinner\TrackerLibrary\bin\Release\Dapper.dll
+d:\Repos\05 - ContestWinner\TrackerLibrary\bin\Release\Microsoft.IdentityModel.Logging.dll
+d:\Repos\05 - ContestWinner\TrackerLibrary\bin\Release\Microsoft.IdentityModel.Tokens.dll
+d:\Repos\05 - ContestWinner\TrackerLibrary\bin\Release\Newtonsoft.Json.dll
+d:\Repos\05 - ContestWinner\TrackerLibrary\bin\Release\System.IdentityModel.Tokens.Jwt.dll
+d:\Repos\05 - ContestWinner\TrackerLibrary\bin\Release\Twilio.dll
+d:\Repos\05 - ContestWinner\TrackerLibrary\bin\Release\Dapper.xml
+d:\Repos\05 - ContestWinner\TrackerLibrary\bin\Release\Microsoft.IdentityModel.Tokens.xml
+d:\Repos\05 - ContestWinner\TrackerLibrary\bin\Release\Newtonsoft.Json.xml
+d:\Repos\05 - ContestWinner\TrackerLibrary\bin\Release\System.IdentityModel.Tokens.Jwt.xml
+d:\Repos\05 - ContestWinner\TrackerLibrary\bin\Release\Twilio.xml
+d:\Repos\05 - ContestWinner\TrackerLibrary\obj\Release\TrackerLibrary.csprojAssemblyReference.cache
+d:\Repos\05 - ContestWinner\TrackerLibrary\obj\Release\TrackerLibrary.csproj.CopyComplete
+d:\Repos\05 - ContestWinner\TrackerLibrary\obj\Release\TrackerLibrary.dll
+d:\Repos\05 - ContestWinner\TrackerLibrary\obj\Release\TrackerLibrary.pdb
