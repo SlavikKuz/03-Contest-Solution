@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Contest Winner</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        @Html.ActionLink("Contest Winner", "Index", "Home", new { area = " " }, new { @class = "navbar - brand" })
+        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">@Html.ActionLink("People", "Index", "People", new { area = "" }, new { @class = "nav - link" })</li>
+                <li class="nav-item">@Html.ActionLink("Teams", "Index", "Teams", new { area = "" }, new { @class = "nav - link" })</li>
+                <li class="nav-item">@Html.ActionLink("Prizes", "Index", "Prizes", new { area = "" }, new { @class = "nav - link" })</li>
+                <li class="nav-item">@Html.ActionLink("Contact", "Contact", "Home", new { area = "" }, new { @class = "nav - link" })</li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Contest Winner Solution by Slavik Kuz, after tutorials by Tim Corey</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

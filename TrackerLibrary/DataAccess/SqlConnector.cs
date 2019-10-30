@@ -11,7 +11,7 @@ namespace TrackerLibrary.DataAccess
 {
     public class  SqlConnector : IDataConnection
     {
-        private const string db = "ContestSolution";
+        private const string db = "cw_localdb_30102019";
 
         public void CreatePerson(PersonModel model)
         {
