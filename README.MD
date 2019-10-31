@@ -1,11 +1,11 @@
 #### Hi! This is a Contest Winner solution 
 ##### *C#, SQL, ASP.Net MVC5, Azure, Bootstrap4. Additionally UI WinForms*
 
-1.0. [Solution specifics](#01).
-2.0. [Data Design](#02).
-   - 2.1. [Database diagram](#03).
-   - 2.2. Classes.
-   - 2.3. smth
+1.0. [Solution specifics](#01)
+2.0. [Data Design](#02)
+   - 2.1. [Database](#03)
+   - 2.2. TrackerLibrary
+   - 2.3. Tournament logic
    
 3.0. Web App 
 4.0. WinForms
@@ -60,10 +60,91 @@ The solution consists of three projects:
 - `MVCUI` web application, models, views, controllers, scripts.
 - `WinFormsUI` Windows application, that works with SQL and CSV databases.
 
-#####<a href='#03' id='03' class='anchor' aria-hidden='true'>2.1. Database diagram
-</a>
+###<a href='#03' id='03' class='anchor' aria-hidden='true'>2.1. Database diagram</a>
 <br>
 <img src="/Readme/00_DBDiagram.png?raw=true" width="640"/>
+
+The database was designed in Misrosoft SSMS, and later was moved to Azure SQL server.
+
+The database consists following tables and stored procedures:
+
+dbo.MatchupEntries
+   - id (PK, int, not null)
+   - Matchupld (FK, int, not null)
+   - ParentMatchupld (FK, int, null)
+   - TeamCompetingld (FK, int, null)
+   - Score (float, null)
+
+dbo.Matchups
+   - id (PK, int, not null)
+   - Tournamentld (int, not null)
+   - Winnerld (FK, int, null)
+   - MatchupRound (int, not null)
+
+dbo.PeopIe
+
+   - id (PK, int, not null)
+   - FirstName (nvarchar(100), not null)
+   - LastName (nvarchar(100), not null)
+   - EmailAddress (nvarchar(100), not null)
+   - CellphoneNumber (varchar(20), null)
+
+dbo.Prizes
+   - id (PK, int, not null)
+   - PIaceNumber (int, not null)
+   - PIaceName (nvarchar(50), not null)
+   - PrizeAmount (money, not null)
+   - PrizePercentage (float, not null)
+
+dbo.Team
+   - id (PK, int, not null)
+   - TeamName (nvarchar(100), not null)
+
+dbo.TeamMembers
+   - id (PK, int, not null)
+   - Teamld (FK, int, not null)
+   - Personld (FK, int, not null)
+
+dbo.TournamentEntries
+   - id (PK, int, not null)
+   - Tournamentld (FK, int, not null)
+   - Teamld (FK, int, not null)
+
+dbo.TournamentPrizes
+  - id (PK, int, not null)
+  - Tournamentld (FK, int, not null)
+  - Prizeld (FK, int, not null)
+
+dbo.Tournaments
+   - id (PK, int, not null)
+   - TournamentName (nvarchar(20), not null)
+   - EntryFee (money, not null)
+   - Active (bit, not null)
+
+List of sotred procedures:
+
+- dbo.spMatchupEntries_GetByMatchup
+- dbo.spMatchupEntries_lnsert
+- dbo.spMatchupEntries_Update
+- dbo.spMatchups_GetByTournament
+- dbo.spMatchups_lnsert
+- dbo.spMatchups_Update
+- dbo.spPeople_GetAl|
+- dbo.spPeople_Insert
+- dbo.spPrizes_GetAll
+- dbo.spPrizes_GetByTournament
+- dbo.spPrizes_lnsert
+- dbo.spTeam_GetAll
+- dbo.spTeam_GetByTournament
+- dbo.spTeamMembers_GetByTeam
+- dbo.spTeamMembers_lnsert
+- dbo.spTeams_lnsert
+- dbo.spTournamentEntries_lnsert
+- dbo.spTournamentPrizes_lnsert
+- dbo.spTournaments_Comp|ete
+- dbo.spTournaments_GetAll
+- dbo.spTournaments_lnsert
+
 
 2.2. `TrackerLibrary` structure.
 
@@ -152,6 +233,17 @@ Then `CreatePrize(PrizeModel model)` executes on the `connection` a stored DB pr
 - TournamentLogic.cs;
 - EmailLogic.cs;
 - SMSLogic.cs
+
+3. Web application
+
+<img src="/Readme/00_asp.png?raw=true" width="320"/>
+<img src="/Readme/01_asp.png?raw=true" width="320"/>
+<img src="/Readme/02_asp.png?raw=true" width="320"/>
+<img src="/Readme/03_asp.png?raw=true" width="320"/>
+<img src="/Readme/04_asp.png?raw=true" width="320"/>
+<img src="/Readme/05_asp.png?raw=true" width="320"/>
+
+
 
 4. WinForms.
 The project contains forms for creating every model in the solution.
