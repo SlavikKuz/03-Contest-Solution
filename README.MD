@@ -1,7 +1,7 @@
 #### Hi! This is a Contest Winner solution 
 ##### *C#, SQL, ASP.Net MVC5, Azure, Bootstrap4. Additionally UI WinForms*
 
-1.0. [Solution specifics](#10)
+1.0. [Solution specifics](#10)<br>
 2.0. [Data Design](#20)
    - 2.1. [Database](#21)
    - 2.2. [TrackerLibrary](#22)
@@ -29,7 +29,7 @@
 - creates and schedules matches;
 - losing team is eliminated;
 - the last standing wins.
-
+<br>
 1.2. Detailed:
 - variable number of players in a contest;
 - in case of non-usual number of players (like %4 != 0), some random players skip the first round as winners to join players in the second act;
@@ -63,8 +63,8 @@ The solution consists of three projects:
 - `TrackerLibrary` includes data models, tourmanent logic, data access logic.
 - `MVCUI` web application, models, views, controllers, scripts.
 - `WinFormsUI` Windows application, that works with SQL and CSV databases.
-
-####<a href='#21' id='21' class='anchor' aria-hidden='true'>2.1. Database diagram</a>
+<br>
+#####<a href='#21' id='21' class='anchor' aria-hidden='true'>2.1. Database diagram</a>
 <br>
 <img src="/Readme/00_DBDiagram.png?raw=true" width="640"/>
 
@@ -149,11 +149,11 @@ List of sotred procedures:
 - dbo.spTournaments_GetAll
 - dbo.spTournaments_lnsert
 
-
+<br>
 ####<a href='#22' id='22' class='anchor' aria-hidden='true'>2.2. TrackerLibrary structure</a>
 <br>
 
-####<a href='#221' id='221' class='anchor' aria-hidden='true'>2.2.1. Models</a>
+#####<a href='#221' id='221' class='anchor' aria-hidden='true'>2.2.1. Models</a>
 <br>
 Models describe entities in the project.  *C# classes*  are orginized in forlder `Models`.
 <br>
@@ -210,8 +210,9 @@ Models describe entities in the project.  *C# classes*  are orginized in forlder
 *Additionaly:*
 - GlobalConfig.cs, Enum.cs files in the root.
 
+<br>
 <img src="/Readme/DataConnectionDiagram.png?raw=true" width="640"/>
-
+<br>
 2.2.2.1. `IDataConnection interface` contains abstract methods and is implemented in two classes that write data to DB or .csv file.
 - `PrizeModel CreatePrize(args)`,
 - `PersonModel CreatePerson(args)`,
@@ -237,14 +238,15 @@ Then `CreatePrize(PrizeModel model)` executes on the `connection` a stored DB pr
 - `public List<PersonModel> GetPerson_All()` method establishes connection to the DB `using SqlConnection(GlobalConfig.CnnString())`, and fills a new `List<PersonModel> output` with result of executed query `dbo.spPeople_GetAll` in the database. List of all registered members is returned.
 
 2.2.2.5. `Class TextConnector : IDataConnection` saves data to .csv file. File path is stored in the `App.config`.  `TextConnectorProsessor` contains all the methods for writing and reading CSV files.
-
+<br>
 ####<a href='#23' id='23' class='anchor' aria-hidden='true'>2.3. Tournament logic </a>
 <br>
 Tournament logic conatins in the files
    - `TournamentLogic.cs`, describes how the tournament starts, continues, and its changes,
    - `EmailLogic.cs`, emailing users.
    - `SMSLogic.cs`, sending sms.
-
+   
+<br>
 ####<a href='#30' id='30' class='anchor' aria-hidden='true'>3.0 Web application </a>
 <br>
 
@@ -293,8 +295,8 @@ The project consists of the three main folders:
 <br>
 
 The project contains forms for creating every model in the solution.
-
-####<a href='#41' id='41' class='anchor' aria-hidden='true'>4.1. Tournament Dashbord</a>
+<br>
+#####<a href='#41' id='41' class='anchor' aria-hidden='true'>4.1. Tournament Dashbord</a>
 <br>
 `TournamentDashbordForm.cs`
 
@@ -303,24 +305,24 @@ The form is to open en existing tournament from the list or create new.
 <img src="/Readme/03_Dashboard.png?raw=true" width="320"/>
 
 Opening an existing tournament leads to Viewer form.
-
-####<a href='#42' id='42' class='anchor' aria-hidden='true'>4.2. Tournament Viewer</a>
+<br>
+#####<a href='#42' id='42' class='anchor' aria-hidden='true'>4.2. Tournament Viewer</a>
 <br>
 `TournamentViewerForm.cs`
 
 <img src="/Readme/04_ContestView.png?raw=true" width="320"/>
 
 On the form user can see all the teams that plays each round, set scores after the match and see matchups pairs.
-
-####<a href='#43' id='43' class='anchor' aria-hidden='true'>4.3. Create Tournament</a>
+<br>
+#####<a href='#43' id='43' class='anchor' aria-hidden='true'>4.3. Create Tournament</a>
 <br>
 `CreateTournamentForm.cs`
 
 <img src="/Readme/05_CreateContest.png?raw=true" width="320"/>
 
 For reference, let's show mechanics behind forms for `Prize` and `Team`.
-
-####<a href='#44' id='44' class='anchor' aria-hidden='true'>4.4. Create Prize</a>
+<br>
+#####<a href='#44' id='44' class='anchor' aria-hidden='true'>4.4. Create Prize</a>
 <br>
 `CreatePrizeForm.cs`
 
@@ -337,8 +339,8 @@ Event handlers in form `CreatePrizeForm.cs`:
 A private method `ValidateForm()` inspects the fullfilling of the form, and shows message *`Please, check the form!`* if any problem appears. If the validation is passed, a new `PrizeModel` instance is created. `PrizeModel class` contains a user's constructor that parses string values from the form to the fields.
 
 A weak reference calls a static property `GlobalConfig.Connection` that returns `IDataConnection` interface containing an abstract method `CreatePrize(PrizeModel model)`. The `GlobalConfig.Connection` property can return instance of `SqlConnector` or `TextConnector` class that both implement `IDataConnection` interface. `CreatePrize(model)` method stores the instance to Database or .csv file according to `DatabaseType` from `GlobalConfig.Connections`. After that the form is cleared.
-
-####<a href='#45' id='45' class='anchor' aria-hidden='true'>4.5. Create Team</a>
+<br>
+#####<a href='#45' id='45' class='anchor' aria-hidden='true'>4.5. Create Team</a>
 <br>
 `CreateTeamForm.cs`<br/>
 The form is to create a new team player, select existing member, make a team, add a new team, and remove selected members from the team.
