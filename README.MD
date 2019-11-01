@@ -1,23 +1,27 @@
 #### Hi! This is a Contest Winner solution 
 ##### *C#, SQL, ASP.Net MVC5, Azure, Bootstrap4. Additionally UI WinForms*
 
-1.0. [Solution specifics](#01)
-2.0. [Data Design](#02)
-   - 2.1. [Database](#03)
-   - 2.2. TrackerLibrary
-   - 2.3. Tournament logic
+1.0. [Solution specifics](#10)
+2.0. [Data Design](#20)
+   - 2.1. [Database](#21)
+   - 2.2. [TrackerLibrary](#22)
+     - 2.2.1. [Models](#221)
+     - 2.2.2. [DataAccess](#222)
+   - 2.3.  [Tournament logic](#23)
    
-3.0. Web App 
-4.0. WinForms
-   - 4.1. TournamentDashbordForm.cs
-   - 4.2. TournamentViewerForm.cs
-   - 4.3. CreateTournamentForm.cs
-   - 4.4. CreatePrizeForm.cs
-   - 4.5. Create Team form
+3.0.  [Web App](#30)
+  - 3.1. [Structure](#31)
+  - 3.2. [Views](#32)
 
-5.0. [  ](#05)
+4.0.  [WinForms](#40)
+   - 4.1.  [Tournament Dashbord](#41)
+   - 4.2.  [Tournament Viewer](#42)
+   - 4.3.  [Create Tournament](#43)
+   - 4.4.  [Create Prize](#44)
+   - 4.5.  [Create Team](#45)
+<br>
 
-### <a href='#01' id='01' class='anchor' aria-hidden='true'>1.0. Solution specifics</a>
+#### <a href='#10' id='10' class='anchor' aria-hidden='true'>1.0. Solution specifics</a>
 <br>
 1.1. General:
 - tracks who wins in series of matches and the game;
@@ -53,14 +57,14 @@
 - interfaces;
 - randomizing.
 
-### <a href='#02' id='02' class='anchor' aria-hidden='true'>2.0. Data Design</a>
+#### <a href='#20' id='20' class='anchor' aria-hidden='true'>2.0. Data Design</a>
 <br>
 The solution consists of three projects:
 - `TrackerLibrary` includes data models, tourmanent logic, data access logic.
 - `MVCUI` web application, models, views, controllers, scripts.
 - `WinFormsUI` Windows application, that works with SQL and CSV databases.
 
-###<a href='#03' id='03' class='anchor' aria-hidden='true'>2.1. Database diagram</a>
+####<a href='#21' id='21' class='anchor' aria-hidden='true'>2.1. Database diagram</a>
 <br>
 <img src="/Readme/00_DBDiagram.png?raw=true" width="640"/>
 
@@ -146,9 +150,12 @@ List of sotred procedures:
 - dbo.spTournaments_lnsert
 
 
-2.2. `TrackerLibrary` structure.
+####<a href='#22' id='22' class='anchor' aria-hidden='true'>2.2. TrackerLibrary structure</a>
+<br>
 
-2.2.1. Models describe entities in the project.  *C# classes*  are orginized in forlder `Models`.
+####<a href='#221' id='221' class='anchor' aria-hidden='true'>2.2.1. Models</a>
+<br>
+Models describe entities in the project.  *C# classes*  are orginized in forlder `Models`.
 <br>
 - Team, `TeamModel.cs`
   - id;
@@ -193,7 +200,9 @@ List of sotred procedures:
   - ParentMatchupId(int); *//identifier for the parent matchup*
   - ParentMatchup (Matchup).
 
-2.2.2.  `DataAccess` folder describes data acces logic. It contains:
+####<a href='#222' id='222' class='anchor' aria-hidden='true'>2.2.2.  DataAccess</a>
+<br>
+`DataAccess` folder describes data acces logic. It contains:
 - interface IDataConnection;
 - class  SqlConnector : IDataConnection;
 - class TextConnector : IDataConnection;
@@ -229,26 +238,65 @@ Then `CreatePrize(PrizeModel model)` executes on the `connection` a stored DB pr
 
 2.2.2.5. `Class TextConnector : IDataConnection` saves data to .csv file. File path is stored in the `App.config`.  `TextConnectorProsessor` contains all the methods for writing and reading CSV files.
 
-2.3. Tournament logic conatins in the files
-- TournamentLogic.cs;
-- EmailLogic.cs;
-- SMSLogic.cs
+####<a href='#23' id='23' class='anchor' aria-hidden='true'>2.3. Tournament logic </a>
+<br>
+Tournament logic conatins in the files
+   - `TournamentLogic.cs`, describes how the tournament starts, continues, and its changes,
+   - `EmailLogic.cs`, emailing users.
+   - `SMSLogic.cs`, sending sms.
 
-3. Web application
+####<a href='#30' id='30' class='anchor' aria-hidden='true'>3.0 Web application </a>
+<br>
 
+The project `MVCUI` was built with ASP.NET MVC5 as an Intranet solution. The project is not optimized for publication in the Internet because of large number of database queries (often in loops) which slows down the performance dramatically. 
+
+####<a href='#31' id='31' class='anchor' aria-hidden='true'>3.1. Structure </a>
+<br>
+
+The project consists of the three main folders:
+- `Models`, which are pretty much similar to `Models` in `TrackerLibrary`, cointain several additional filelds due to web appp specifics. New models were created not to interfere with existing solution, and build ASP.NET as an addon.
+   - `MatchupMVCModel.cs`
+   - `RoundMVCModel.cs`
+   - `TeamMVCModel.cs`
+   - `TournamentMVCCreateModel.cs`
+   - `TournamentMVCDetailsModel.cs`
+- `Controllers` which contains logic and connects models and views.
+   - `HomeController.cs`, views `Contact`, `Index`;
+   - `PeopleController.cs`, views `Create`, `Index`;
+   - `PrizesController.cs`, views `Create`, `Index`;
+   - `TeamsController.cs`, views  `Create`, `Index`;
+   - `TournamentsController.cs`, views  `Create`, `Details`;
+- `Views`, which contains HTML pages, incl. partial views.
+
+####<a href='#32' id='32' class='anchor' aria-hidden='true'>3.2. Web Application Views</a>
+<br>
+
+- Home
 <img src="/Readme/00_asp.png?raw=true" width="320"/>
+
+- Tournaments View
 <img src="/Readme/01_asp.png?raw=true" width="320"/>
+
+- Create New Tournament
 <img src="/Readme/02_asp.png?raw=true" width="320"/>
+
+- People
 <img src="/Readme/03_asp.png?raw=true" width="320"/>
+
+- Teams
 <img src="/Readme/04_asp.png?raw=true" width="320"/>
+
+- Prizes
 <img src="/Readme/05_asp.png?raw=true" width="320"/>
 
+####<a href='#40' id='40' class='anchor' aria-hidden='true'>4.0. WinForms</a>
+<br>
 
-
-4. WinForms.
 The project contains forms for creating every model in the solution.
 
-4.1. `TournamentDashbordForm.cs`
+####<a href='#41' id='41' class='anchor' aria-hidden='true'>4.1. Tournament Dashbord</a>
+<br>
+`TournamentDashbordForm.cs`
 
 The form is to open en existing tournament from the list or create new.
 
@@ -256,19 +304,25 @@ The form is to open en existing tournament from the list or create new.
 
 Opening an existing tournament leads to Viewer form.
 
-4.2. `TournamentViewerForm.cs`
+####<a href='#42' id='42' class='anchor' aria-hidden='true'>4.2. Tournament Viewer</a>
+<br>
+`TournamentViewerForm.cs`
 
 <img src="/Readme/04_ContestView.png?raw=true" width="320"/>
 
 On the form user can see all the teams that plays each round, set scores after the match and see matchups pairs.
 
-4.3. `CreateTournamentForm.cs`
+####<a href='#43' id='43' class='anchor' aria-hidden='true'>4.3. Create Tournament</a>
+<br>
+`CreateTournamentForm.cs`
 
 <img src="/Readme/05_CreateContest.png?raw=true" width="320"/>
 
 For reference, let's show mechanics behind forms for `Prize` and `Team`.
 
-4.4. `CreatePrizeForm.cs`
+####<a href='#44' id='44' class='anchor' aria-hidden='true'>4.4. Create Prize</a>
+<br>
+`CreatePrizeForm.cs`
 
 The form creates rewards for winners in the contest.
 
@@ -284,7 +338,9 @@ A private method `ValidateForm()` inspects the fullfilling of the form, and show
 
 A weak reference calls a static property `GlobalConfig.Connection` that returns `IDataConnection` interface containing an abstract method `CreatePrize(PrizeModel model)`. The `GlobalConfig.Connection` property can return instance of `SqlConnector` or `TextConnector` class that both implement `IDataConnection` interface. `CreatePrize(model)` method stores the instance to Database or .csv file according to `DatabaseType` from `GlobalConfig.Connections`. After that the form is cleared.
 
-4.5. Create Team form<br/>
+####<a href='#45' id='45' class='anchor' aria-hidden='true'>4.5. Create Team</a>
+<br>
+`CreateTeamForm.cs`<br/>
 The form is to create a new team player, select existing member, make a team, add a new team, and remove selected members from the team.
 
 <img src="/Readme/02_CreateTeam.png?raw=true" width="320"/>
@@ -320,7 +376,7 @@ When the member is selected in `Select Team Member` field (`List<PersonModel> av
 
 This set of actions is opposite to `Add Member` click when an insatce is removed from `selectedTeamMembers` and is added to `availableTeamMembers`.
 
-#### `Create Team` click -> `new TeamModel` -> `CreateTeam(t)` -> NOT FINISHED
+#### `Create Team` click -> `new TeamModel` -> `CreateTeam(t)` -> ...
 
 A new instance of `TeamModel` is created. Property `TeamName` is taken form `Team Name` field, and `TeamMembers` is a `List<PersonModel> selectedTeamMembers`.
 
