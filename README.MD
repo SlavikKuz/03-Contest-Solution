@@ -64,7 +64,8 @@ The solution consists of three projects:
 - `MVCUI` web application, models, views, controllers, scripts.
 - `WinFormsUI` Windows application, that works with SQL and CSV databases.
 <br>
-#####<a href='#21' id='21' class='anchor' aria-hidden='true'>2.1. Database diagram</a>
+    
+##### <a href='#21' id='21' class='anchor' aria-hidden='true'>2.1. Database diagram</a>
 <br>
 <img src="/Readme/00_DBDiagram.png?raw=true" width="640"/>
 
@@ -148,12 +149,12 @@ List of sotred procedures:
 - dbo.spTournaments_Comp|ete
 - dbo.spTournaments_GetAll
 - dbo.spTournaments_lnsert
-
+        
 <br>
-####<a href='#22' id='22' class='anchor' aria-hidden='true'>2.2. TrackerLibrary structure</a>
+#### <a href='#22' id='22' class='anchor' aria-hidden='true'>2.2. TrackerLibrary structure</a>
 <br>
-
-#####<a href='#221' id='221' class='anchor' aria-hidden='true'>2.2.1. Models</a>
+       
+##### <a href='#221' id='221' class='anchor' aria-hidden='true'>2.2.1. Models</a>
 <br>
 Models describe entities in the project.  *C# classes*  are orginized in forlder `Models`.
 <br>
@@ -199,8 +200,8 @@ Models describe entities in the project.  *C# classes*  are orginized in forlder
   - Score (double);
   - ParentMatchupId(int); *//identifier for the parent matchup*
   - ParentMatchup (Matchup).
-
-####<a href='#222' id='222' class='anchor' aria-hidden='true'>2.2.2.  DataAccess</a>
+            
+#### <a href='#222' id='222' class='anchor' aria-hidden='true'>2.2.2.  DataAccess</a>
 <br>
 `DataAccess` folder describes data acces logic. It contains:
 - interface IDataConnection;
@@ -239,20 +240,20 @@ Then `CreatePrize(PrizeModel model)` executes on the `connection` a stored DB pr
 
 2.2.2.5. `Class TextConnector : IDataConnection` saves data to .csv file. File path is stored in the `App.config`.  `TextConnectorProsessor` contains all the methods for writing and reading CSV files.
 <br>
-####<a href='#23' id='23' class='anchor' aria-hidden='true'>2.3. Tournament logic </a>
+#### <a href='#23' id='23' class='anchor' aria-hidden='true'>2.3. Tournament logic </a>
 <br>
 Tournament logic conatins in the files
    - `TournamentLogic.cs`, describes how the tournament starts, continues, and its changes,
    - `EmailLogic.cs`, emailing users.
    - `SMSLogic.cs`, sending sms.
-   
+         
 <br>
-####<a href='#30' id='30' class='anchor' aria-hidden='true'>3.0 Web application </a>
+#### <a href='#30' id='30' class='anchor' aria-hidden='true'>3.0 Web application </a>
 <br>
 
 The project `MVCUI` was built with ASP.NET MVC5 as an Intranet solution. The project is not optimized for publication in the Internet because of large number of database queries (often in loops) which slows down the performance dramatically. 
 
-####<a href='#31' id='31' class='anchor' aria-hidden='true'>3.1. Structure </a>
+#### <a href='#31' id='31' class='anchor' aria-hidden='true'>3.1. Structure </a>
 <br>
 
 The project consists of the three main folders:
@@ -270,7 +271,7 @@ The project consists of the three main folders:
    - `TournamentsController.cs`, views  `Create`, `Details`;
 - `Views`, which contains HTML pages, incl. partial views.
 
-####<a href='#32' id='32' class='anchor' aria-hidden='true'>3.2. Web Application Views</a>
+#### <a href='#32' id='32' class='anchor' aria-hidden='true'>3.2. Web Application Views</a>
 <br>
 
 - Home
@@ -291,12 +292,12 @@ The project consists of the three main folders:
 - Prizes
 <img src="/Readme/05_asp.png?raw=true" width="320"/>
 
-####<a href='#40' id='40' class='anchor' aria-hidden='true'>4.0. WinForms</a>
+#### <a href='#40' id='40' class='anchor' aria-hidden='true'>4.0. WinForms</a>
 <br>
 
 The project contains forms for creating every model in the solution.
 <br>
-#####<a href='#41' id='41' class='anchor' aria-hidden='true'>4.1. Tournament Dashbord</a>
+##### <a href='#41' id='41' class='anchor' aria-hidden='true'>4.1. Tournament Dashbord</a>
 <br>
 `TournamentDashbordForm.cs`
 
@@ -306,7 +307,7 @@ The form is to open en existing tournament from the list or create new.
 
 Opening an existing tournament leads to Viewer form.
 <br>
-#####<a href='#42' id='42' class='anchor' aria-hidden='true'>4.2. Tournament Viewer</a>
+##### <a href='#42' id='42' class='anchor' aria-hidden='true'>4.2. Tournament Viewer</a>
 <br>
 `TournamentViewerForm.cs`
 
@@ -314,7 +315,7 @@ Opening an existing tournament leads to Viewer form.
 
 On the form user can see all the teams that plays each round, set scores after the match and see matchups pairs.
 <br>
-#####<a href='#43' id='43' class='anchor' aria-hidden='true'>4.3. Create Tournament</a>
+##### <a href='#43' id='43' class='anchor' aria-hidden='true'>4.3. Create Tournament</a>
 <br>
 `CreateTournamentForm.cs`
 
@@ -322,7 +323,7 @@ On the form user can see all the teams that plays each round, set scores after t
 
 For reference, let's show mechanics behind forms for `Prize` and `Team`.
 <br>
-#####<a href='#44' id='44' class='anchor' aria-hidden='true'>4.4. Create Prize</a>
+##### <a href='#44' id='44' class='anchor' aria-hidden='true'>4.4. Create Prize</a>
 <br>
 `CreatePrizeForm.cs`
 
@@ -340,7 +341,7 @@ A private method `ValidateForm()` inspects the fullfilling of the form, and show
 
 A weak reference calls a static property `GlobalConfig.Connection` that returns `IDataConnection` interface containing an abstract method `CreatePrize(PrizeModel model)`. The `GlobalConfig.Connection` property can return instance of `SqlConnector` or `TextConnector` class that both implement `IDataConnection` interface. `CreatePrize(model)` method stores the instance to Database or .csv file according to `DatabaseType` from `GlobalConfig.Connections`. After that the form is cleared.
 <br>
-#####<a href='#45' id='45' class='anchor' aria-hidden='true'>4.5. Create Team</a>
+##### <a href='#45' id='45' class='anchor' aria-hidden='true'>4.5. Create Team</a>
 <br>
 `CreateTeamForm.cs`<br/>
 The form is to create a new team player, select existing member, make a team, add a new team, and remove selected members from the team.
