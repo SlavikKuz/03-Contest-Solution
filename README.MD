@@ -1,6 +1,8 @@
 #### Hi! This is a Contest Winner solution 
 ##### *C#, SQL, ASP.Net MVC5, Azure, Bootstrap4. Additionally UI WinForms*
 
+<img src="/Readme/00_asp.png?raw=true" width="320"/>
+
 1.0. [Solution specifics](#10)<br>
 2.0. [Data Design](#20)
    - 2.1. [Database](#21)
@@ -149,11 +151,11 @@ List of sotred procedures:
 - dbo.spTournaments_Comp|ete
 - dbo.spTournaments_GetAll
 - dbo.spTournaments_lnsert
-        
+
+<br>   
+#### <a href='#22' id='22' class='anchor' aria-hidden='true'> 2.2. TrackerLibrary structure </a>
 <br>
-#### <a href='#22' id='22' class='anchor' aria-hidden='true'>2.2. TrackerLibrary structure</a>
-<br>
-       
+
 ##### <a href='#221' id='221' class='anchor' aria-hidden='true'>2.2.1. Models</a>
 <br>
 Models describe entities in the project.  *C# classes*  are orginized in forlder `Models`.
@@ -248,7 +250,7 @@ Tournament logic conatins in the files
    - `SMSLogic.cs`, sending sms.
          
 <br>
-#### <a href='#30' id='30' class='anchor' aria-hidden='true'>3.0 Web application </a>
+#### <a href='#30' id='30' class='anchor' aria-hidden='true'>3.0. Web application </a>
 <br>
 
 The project `MVCUI` was built with ASP.NET MVC5 as an Intranet solution. The project is not optimized for publication in the Internet because of large number of database queries (often in loops) which slows down the performance dramatically. 
